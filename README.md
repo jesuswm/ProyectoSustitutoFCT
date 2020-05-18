@@ -1,9 +1,9 @@
 ProyectoSustitutoFCT
 
-# 15/03/2020
+# 15/05/2020
 1. Comienzo del trabajo de investigación de páginas y aplicaciones de referencia para decidir que funcionalidades necesitaría la aplicación y hacerme una idea de cómo realizar el diseño de las interfaces de usuario. 
 
-# 18/03/2020
+# 18/05/2020
 1. A lo largo de este fin de semana hasta hoy he continuado con la investigación y he llegado las siguientes conclusiones para el diseño de la red social:
 	* La red social se compondrá de múltiples usuarios cada uno con un e-mail, una contraseña y un nombre.
 
