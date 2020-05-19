@@ -15,3 +15,10 @@ ProyectoSustitutoFCT
 2. En base a las conclusiones expuestas en el apartado anterior he creado un diagrama entidad-relación en “yEd” según el cual diseñaré la base de datos.
 
 3. También he estado investigando diferentes programas para realizar los diversos diseños de las pantallas de interface de usuario y el diseño de navegación entre pantallas. Finalmente me he decidido por hacer esto en “Mockplus”. Si todo va bien espero poder subirte todos los diseños de pantallas mañana.
+
+# 19/05/2020
+1. Diseño de las pantallas de interface de usuario tanto en Web como App móvil y el Diseño de navegación entre pantallas, se han subido imágenes de las pantallas y la navegación en la carpeta “Imágenes pantallas”.
+
+2. También he estado probando como hacer una Aplicación Web en .Net.
+
+3. Comienzo la redactar del anteproyecto.
