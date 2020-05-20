@@ -22,3 +22,9 @@ ProyectoSustitutoFCT
 2. También he estado probando como hacer una Aplicación Web en .Net.
 
 3. Comienzo la redactar del anteproyecto.
+
+# 20/05/2020
+
+1. Entrega del anteproyecto.
+
+2. Informándome sobre el OAuth. 
