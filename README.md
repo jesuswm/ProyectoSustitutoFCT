@@ -28,3 +28,9 @@ ProyectoSustitutoFCT
 1. Entrega del anteproyecto.
 
 2. Informándome sobre el OAuth. 
+
+# 21/05/2020
+
+1. Creación de la base de datos subo el archivo “Creación de tablas.sql” con las sentencias de creación.
+
+2. Comienzo del proyecto del servicio REST lo subiré dentro de la carpeta “RestProyect”.
