@@ -34,3 +34,11 @@ ProyectoSustitutoFCT
 1. Creación de la base de datos subo el archivo “Creación de tablas.sql” con las sentencias de creación.
 
 2. Comienzo del proyecto del servicio REST lo subiré dentro de la carpeta “RestProyect”.
+
+# 22/05/2020
+
+1. Modificación de la tabla amigos de la base de datos. He realizado los cambios en la tabla que me ha aconsejado Javi en la corrección del anteproyecto (eliminación del campo id).
+
+2. Sigo trabajando en el servicio REST.
+
+3. Esta semana no te mandare un video ya que aún no tengo suficiente material para mostrarte.

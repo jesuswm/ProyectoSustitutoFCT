@@ -7,15 +7,17 @@ public class Peticiones {
 	private int id;
 	private int idSolicitante;
 	private int idSolicitado;
+	String nombreSolicitante;
 	
 	public Peticiones() {
 		
 	}
-	public Peticiones(int id, int idSolicitante, int idSolicitado) {
+	public Peticiones(int id, int idSolicitante, int idSolicitado, String nombreSolicitante) {
 		super();
 		this.id = id;
 		this.idSolicitante = idSolicitante;
 		this.idSolicitado = idSolicitado;
+		this.nombreSolicitante = nombreSolicitante;
 	}
 	public int getId() {
 		return id;
@@ -34,6 +36,12 @@ public class Peticiones {
 	}
 	public void setIdSolicitado(int idSolicitado) {
 		this.idSolicitado = idSolicitado;
+	}
+	public String getNombreSolicitante() {
+		return nombreSolicitante;
+	}
+	public void setNombreSolicitante(String nombreSolicitante) {
+		this.nombreSolicitante = nombreSolicitante;
 	}
 	
 }

@@ -99,7 +99,7 @@ public class GestorUsuarios {
 				bd.consulta2("delete from tokens where tokens.id_usuario="+id);
 				bd.consulta2("INSERT into tokens(tokens.id_usuario,tokens.token) VALUES("+id+",'"+token+"')");
 				String query="INSERT into tokens(tokens.id_usuario,tokens.token) VALUES("+id+",'"+token+"')";
-				System.out.println(query);
+				//System.out.println(query);
 			}else {
 				bd.cierraBd();
 				return Response.status(Status.BAD_REQUEST).header("error","no se ha encontrado el usuario").build();
@@ -117,6 +117,38 @@ public class GestorUsuarios {
 	public Response obtenerToken(@QueryParam("token") String token) {
 		if(GenerarTokens.comprobarCaducidad(token)) {
 			return Response.ok("todo bien").build();
+		}else {
+			return Response.status(Status.BAD_REQUEST).header("error","Token caducado o inexistente").build();
+		}
+	}
+	@Path("Buscar")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response buscarUsuario(@QueryParam("token") String token, @QueryParam("busqueda") String busqueda) {
+		if(GenerarTokens.comprobarCaducidad(token)) {
+			try {
+				ArrayList<Usuarios> usuarios=new ArrayList<Usuarios>();
+				Bd bd=new Bd();
+				bd.conecta("proyecto_fct");
+				ResultSet rs=bd.consulta("select id,nombre,email from usuarios where nombre like '"+busqueda+"%' || nombre LIKE '%"+busqueda+"'");
+				try {
+					while (rs.next()) {
+						Usuarios usuario=new Usuarios();
+						usuario.setId(rs.getInt(1));
+						usuario.setNombre(rs.getString(2));
+						usuario.setEmail(rs.getString(3));
+						usuarios.add(usuario);
+					}
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				bd.cierraBd();
+				return Response.ok(usuarios).build();
+			} catch (ClassNotFoundException | SQLException e) {
+				e.printStackTrace();
+				return Response.status(Status.BAD_REQUEST).header("error", e.getLocalizedMessage()).build();
+			}
 		}else {
 			return Response.status(Status.BAD_REQUEST).header("error","Token caducado o inexistente").build();
 		}

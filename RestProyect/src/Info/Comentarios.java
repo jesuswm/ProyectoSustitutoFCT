@@ -1,5 +1,7 @@
 package Info;
 
+import java.util.Date;
+
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -8,12 +10,12 @@ public class Comentarios {
 	private int idCreador;
 	private int idPost;
 	private String contenido;
-	private String fecha;
+	private Date fecha;
 	
 	public Comentarios() {
 	
 	}
-	public Comentarios(int id, int idCreador, int idPost, String contenido, String fecha) {
+	public Comentarios(int id, int idCreador, int idPost, String contenido, Date fecha) {
 		this.id = id;
 		this.idCreador = idCreador;
 		this.idPost = idPost;
@@ -44,10 +46,10 @@ public class Comentarios {
 	public void setContenido(String contenido) {
 		this.contenido = contenido;
 	}
-	public String getFecha() {
+	public Date getFecha() {
 		return fecha;
 	}
-	public void setFecha(String fecha) {
+	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
 	
