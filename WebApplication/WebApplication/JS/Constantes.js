@@ -1,0 +1,1 @@
+﻿var restUrl = "http://localhost:8080/RestProyect/rest";

@@ -42,3 +42,7 @@ ProyectoSustitutoFCT
 2. Sigo trabajando en el servicio REST.
 
 3. Esta semana no te mandare un video ya que aún no tengo suficiente material para mostrarte.
+
+# 25/05/2020
+
+1. Comienzo el desarrollo del proyecto de la aplicación web lo subiré dentro de la carpeta “WebApplication”.
