@@ -5,29 +5,37 @@ function inicializar() {
     $("form").submit(registrarse);
 }
 function registrarse() {
+    $("#btsub").prop('disabled', true);
     var nombre = $("#nombre").val();
     var pass = $("#pass").val();
     var confpass = $("#confpass").val();
     var email = $("#email").val();
-    if (pass == confpass) {
-        $.ajax({
-            url: "GetAjax.aspx?op=registro&nombre=" + nombre + "&pass=" + pass + "&email=" + email,
-            // dataType: "json",
-            method: "GET",
-            crossDomain: true,
-            success: function (result) {
-                if ("1".localeCompare(result) == false) {
-                    window.location.href = "Login.aspx";
-                } else {
-                    alert("Valores introducidos invalidos o ya en uso");
+    if (nombre.trim() != "" && email.trim() != "") {
+        if (pass == confpass) {
+            $.ajax({
+                url: "GetAjax.aspx?op=registro&nombre=" + nombre + "&pass=" + pass + "&email=" + email,
+                // dataType: "json",
+                method: "GET",
+                crossDomain: true,
+                success: function (result) {
+                    if ("1".localeCompare(result) == false) {
+                        window.location.href = "Login.aspx";
+                    } else {
+                        $("#error").html("El campo email introducido ya esta en uso en otra cuenta");
+                        $("#error").show();
+                    }
                 }
-            }
-        });
-        return false;
+            });
+        } else {
+            $("#error").html("Los campos de contraseña y confirmar contraseña no coinciden");
+            $("#error").show();
+        }
     } else {
-        alert("Contraseña y confirmar contraseña no coinciden");
-        return false;
+        $("#error").html("No puede dejar campos en blanco");
+        $("#error").show();
     }
+    $("#btsub").prop('disabled', false);
+    return false;
     
 }
 //function registrar() {

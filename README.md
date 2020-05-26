@@ -46,3 +46,7 @@ ProyectoSustitutoFCT
 # 25/05/2020
 
 1. Comienzo el desarrollo del proyecto de la aplicación web lo subiré dentro de la carpeta “WebApplication”.
+
+# 26/05/2020
+
+1. Sigo trabajando en la aplicación.

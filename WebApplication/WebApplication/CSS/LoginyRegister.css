@@ -53,6 +53,10 @@
     background: #43A047;
 }
 
+.form button:disabled {
+        background: #195a1c;
+}
+
 .form .message {
     margin: 15px 0 0;
     color: #b3b3b3;
@@ -104,7 +108,7 @@ text-align: center;
     color: #EF3B3A;
 }
 
-.error {
+#error {
     color: red;
     Display: none
 }

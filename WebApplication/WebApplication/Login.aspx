@@ -19,7 +19,7 @@
                 <input required="required" id="email" type="email" name="email" placeholder="email"/>
                 <p>Contraseña</p>
                 <input type="password" id="pass" required="required" name="pass" placeholder="contraseña"/>
-                <p class="error">Los datos introducidos no corresponden a ningún usuario</p>
+                <p id="error"></p>
                 <button id="btnEntrar" type="button">Entrar</button>
                 <p class="message">Aun no estas registrado <a href="Register.aspx">Registrarse</a></p>
             </form>

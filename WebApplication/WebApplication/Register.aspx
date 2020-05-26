@@ -22,7 +22,8 @@
             <input required="required" type="password" id="pass" name="pass" placeholder="contraseña" />
             <p>Confirmar contraseña</p>
             <input required="required" type="password" id="confpass" name="confpass" placeholder="contraseña"/>
-            <button type="submit">Crear</button>
+            <p id="error"></p>
+            <button id="btsub" type="submit">Crear</button>
             <p class="message">¿Ya estas registrado? <a href="Login.aspx">Iniciar sesión</a></p>
         </form>
     </div>
