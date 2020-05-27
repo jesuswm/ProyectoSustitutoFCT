@@ -153,4 +153,34 @@ public class GestorUsuarios {
 			return Response.status(Status.BAD_REQUEST).header("error","Token caducado o inexistente").build();
 		}
 	}
+	@Path("MiUsuario")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response miUsuario(@QueryParam("token") String token) {
+		if(GenerarTokens.comprobarCaducidad(token)) {
+			try {
+				Bd bd=new Bd();
+				Usuarios usuario=new Usuarios();
+				bd.conecta("proyecto_fct");
+				ResultSet rs=bd.consulta("select usuarios.id,usuarios.nombre,usuarios.email from usuarios JOIN tokens ON usuarios.id=tokens.id_usuario where tokens.token=\""+token+"\"");
+				try {
+					while (rs.next()) {
+						usuario.setId(rs.getInt(1));
+						usuario.setNombre(rs.getString(2));
+						usuario.setEmail(rs.getString(3));
+					}
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				bd.cierraBd();
+				return Response.ok(usuario).build();
+			} catch (ClassNotFoundException | SQLException e) {
+				e.printStackTrace();
+				return Response.status(Status.BAD_REQUEST).header("error", e.getLocalizedMessage()).build();
+			}
+		}else {
+			return Response.status(Status.BAD_REQUEST).header("error","Token caducado o inexistente").build();
+		}
+	}
 }

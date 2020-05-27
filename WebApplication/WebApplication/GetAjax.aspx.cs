@@ -29,6 +29,9 @@ namespace WebApplication
             byte[] bytePost;
             string nombre;
             string email;
+            string idpost;
+            string idpeticion;
+            string aceptar;
             string contraseña;
             switch (op) {
                 case "login":
@@ -123,6 +126,78 @@ namespace WebApplication
                         {
                             result = reader.ReadToEnd();
                             HttpContext.Current.Response.Write(result);
+                        }
+                    }
+                    catch (System.Net.WebException)
+                    {
+                        HttpContext.Current.Response.Write("0");
+                    }
+                    break;
+                case "misPost":
+                    uri = new Uri(restUrl + "/Posts/Propios?token=" + HttpContext.Current.Session["token"]);
+                    try
+                    {
+                        webrequest = (HttpWebRequest)System.Net.WebRequest.Create(uri);
+                        using (WebResponse response = webrequest.GetResponse())
+                        using (reader = new StreamReader(response.GetResponseStream()))
+                        {
+                            result = reader.ReadToEnd();
+                            HttpContext.Current.Response.Write(result);
+                        }
+                    }
+                    catch (System.Net.WebException)
+                    {
+                        HttpContext.Current.Response.Write("0");
+                    }
+                    break;
+                case "comentarios":
+                    idpost = HttpContext.Current.Request.Params["idPost"];
+                    uri = new Uri(restUrl + "/Comentarios?token=" + HttpContext.Current.Session["token"]+ "&idPost="+idpost);
+                    try
+                    {
+                        webrequest = (HttpWebRequest)System.Net.WebRequest.Create(uri);
+                        using (WebResponse response = webrequest.GetResponse())
+                        using (reader = new StreamReader(response.GetResponseStream()))
+                        {
+                            result = reader.ReadToEnd();
+                            HttpContext.Current.Response.Write(result);
+                        }
+                    }
+                    catch (System.Net.WebException)
+                    {
+                        HttpContext.Current.Response.Write("0");
+                    }
+                    break;
+                case "peticiones":
+                    uri = new Uri(restUrl + "/Peticiones?token=" + HttpContext.Current.Session["token"]);
+                    try
+                    {
+                        webrequest = (HttpWebRequest)System.Net.WebRequest.Create(uri);
+                        using (WebResponse response = webrequest.GetResponse())
+                        using (reader = new StreamReader(response.GetResponseStream()))
+                        {
+                            result = reader.ReadToEnd();
+                            HttpContext.Current.Response.Write(result);
+                        }
+                    }
+                    catch (System.Net.WebException)
+                    {
+                        HttpContext.Current.Response.Write("0");
+                    }
+                    break;
+                case "contestarPeticion":
+                    idpeticion= HttpContext.Current.Request.Params["idPeticion"];
+                    aceptar= HttpContext.Current.Request.Params["aceptar"];
+                    uri = new Uri(restUrl + "/Peticiones/Responder?token=" + HttpContext.Current.Session["token"]+ "&idSolicitud="+ idpeticion+ "&aceptar=" + aceptar);
+                    try
+                    {
+                        webrequest = (HttpWebRequest)System.Net.WebRequest.Create(uri);
+                        webrequest.Method = "POST";
+                        using (WebResponse response = webrequest.GetResponse())
+                        using (reader = new StreamReader(response.GetResponseStream()))
+                        {
+                            result = reader.ReadToEnd();
+                            HttpContext.Current.Response.Write("1");
                         }
                     }
                     catch (System.Net.WebException)

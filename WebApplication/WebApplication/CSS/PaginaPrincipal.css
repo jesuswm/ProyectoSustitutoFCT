@@ -17,4 +17,152 @@ body {
 .row {
     width: 100%;
     height: 100%;
+    margin: 0;
+}
+
+.div-amigo {
+    padding-bottom: 10px;
+    border-bottom: solid 1px #adb5bd;
+    border-radius: 16px;
+    background: #cfdaf9ad;
+}
+.postFecha {
+    text-align: end;
+}
+.comFecha {
+    text-align: end;
+}
+.comentario {
+    padding-left: 75px;
+}
+.post {
+    border-top: solid 1px #adb5bd;
+    border-bottom: solid 1px #adb5bd;
+}
+.peticion {
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: solid 1px #adb5bd;
+    border-radius: 16px;
+    background: #cfdaf9ad;
+}
+.btnAceptar {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #4CAF50;
+    width: 75%;
+    border: 0;
+    padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+    .btnAceptar:hover, .btnAceptar:active, .btnAceptar:focus {
+        background: #43A047;
+    }
+
+    .btnAceptar:disabled {
+        background: #195a1c;
+    }
+.btnrechazar {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #c33d28;
+    width: 75%;
+    border: 0;
+    padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+    .btnrechazar:hover, .btnrechazar:active, .btnrechazar:focus {
+        background: #da1c1c;
+    }
+
+    .btnrechazar:disabled {
+        background: #6f3f37;
+    }
+
+#info {
+    padding-bottom: 10px;
+    border: 1px solid #ccc !important;
+    background: antiquewhite;
+    border-radius: 16px;
+}
+
+#user-info {
+    background: #f9f5f5;
+    text-align: center;
+    padding: 0;
+    height: 100%;
+}
+
+#user-request {
+    background: #f9f5f5;
+    padding: 0;
+    height: 100%;
+}
+#user-post{
+    height:100%;
+}
+
+
+#btNewPost {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #4CAF50;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+    #btNewPost:hover, #btNewPost:active, #btNewPost:focus {
+        background: #43A047;
+    }
+
+    #btNewPost:disabled {
+        background: #195a1c;
+    }
+
+#amigos {
+    padding: 10px;
+    border: 1px solid #ccc !important;
+    background: aliceblue;
+    border-radius: 16px;
+    overflow-y: auto;
+}
+    #amigos a {
+        color: #008CBA;
+        font-weight: 500;
+    }
+#posts {
+    overflow-y: auto;
+    padding: 10px;
+    border: 1px solid #ccc !important;
+    border-radius: 16px;
+}
+#peticiones {
+    overflow-y: auto;
+    padding: 10px;
+    border: 1px solid #ccc !important;
+    border-radius: 16px;
+}
+@media screen and (max-width: 768px) {
+    html {
+        overflow: auto;
+        width: 100%;
+    }
+    #user-post {
+        padding-left: 1px;
+        padding-right: 1px;
+    }
 }

@@ -61,9 +61,33 @@ public class GestorDePeticiones {
 			Bd bd=new Bd();
 			try {
 				bd.conecta("proyecto_fct");
-				int resultados=bd.consulta2("INSERT into peticiones(peticiones.id_solicitante,peticiones.id_solicitado) VALUES("+id+","+idSolicitado+")");
-				bd.cierraBd();
-				return Response.status(Status.ACCEPTED).build();
+				ResultSet rs=bd.consulta("select * from peticiones where (id_solicitado="+id+" && id_solicitante="+idSolicitado+") ||"+"(id_solicitado="+idSolicitado+" && id_solicitante="+id+")");
+				boolean existe=false;
+				try {
+					while (rs.next()) {
+						existe=true;
+					}
+				} catch (SQLException e) {
+					return Response.status(Status.BAD_REQUEST).header("error", e.getLocalizedMessage()).build();
+				}
+				rs.close();
+				if(!existe){
+					rs=bd.consulta("select * from amigos where (id_amigo1="+id+" && id_amigo2="+idSolicitado+") ||"+"(id_amigo1="+idSolicitado+" && id_amigo2="+id+")");
+					try {
+						while (rs.next()) {
+							existe=true;
+						}
+					} catch (SQLException e) {
+						return Response.status(Status.BAD_REQUEST).header("error", e.getLocalizedMessage()).build();
+					}
+				}
+				if(!existe) {
+					int resultados=bd.consulta2("INSERT into peticiones(peticiones.id_solicitante,peticiones.id_solicitado) VALUES("+id+","+idSolicitado+")");
+					bd.cierraBd();
+					return Response.status(Status.ACCEPTED).build();
+				}else {
+					return Response.status(Status.BAD_REQUEST).header("error", "Ya existe una peticion equivalente").build();
+				}
 			} catch (ClassNotFoundException | SQLException e) {
 				return Response.status(Status.BAD_REQUEST).header("error", e.getLocalizedMessage()).build();
 			}

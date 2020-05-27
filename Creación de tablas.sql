@@ -12,9 +12,10 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 CREATE TABLE IF NOT EXISTS `amigos` (
   `id_amigo1` int not NULL,
   `id_amigo2` int not NULL,
+  PRIMARY KEY(id_amigo1, id_amigo2),
   CONSTRAINT `amigos_amig1` FOREIGN KEY (`id_amigo1`) REFERENCES `usuarios` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `amigos_amig2` FOREIGN KEY (`id_amigo2`) REFERENCES `usuarios` (`id`) ON UPDATE CASCADE,
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  CONSTRAINT `amigos_amig2` FOREIGN KEY (`id_amigo2`) REFERENCES `usuarios` (`id`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
 
 CREATE TABLE IF NOT EXISTS `peticiones` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -22,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `peticiones` (
   `id_solicitado` int not NULL,
   CONSTRAINT `peticiones_solicitante` FOREIGN KEY (`id_solicitante`) REFERENCES `usuarios` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `peticiones_solicitado` FOREIGN KEY (`id_solicitado`) REFERENCES `usuarios` (`id`) ON UPDATE CASCADE,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`,`id_solicitante`,`id_solicitado`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `post` (

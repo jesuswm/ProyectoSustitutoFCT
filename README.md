@@ -50,3 +50,23 @@ ProyectoSustitutoFCT
 # 26/05/2020
 
 1. Sigo trabajando en la aplicación.
+
+# 27/05/2020
+
+1. Arreglos en la base de datos, concretamente en la tabla amigos y en la tabla peticiones. Se han actualizado las sentencias de creación del archivo “Creación de tablas.sql”. 
+
+2. Cambios en el servicio REST
+
+	* Creacion del método GET miUsuario en la clase GestorUsuarios que pasando como parámetro nuestro token de autentificación nos devuelve un json con la información del usuario propietario del token.
+	
+	* Ahora la clase Comentarios tiene un nuevo parámetro tipo string “autor” en el que se pondrá el nombre del usuario que haya creado el comentario.
+	
+	* Adaptado el método GET comentariosPost de la clase GestorDeComentarios para que el json devuelto también incluya el nuevo parámetro autor.
+	
+	* Cambios en algunos métodos de la clase GestorDePeticiones.
+
+3. Trabajando en la aplicación web.
+
+	* Trabajando en la "PaginaPrincipal" para que en ella se mostraran los post de nuestro usuario y las peticiones de amistad junto a los botones de aceptar o rechazar la petición.
+	
+	* Dándole formato a la "PaginaPrincipal" para que sea lo más similar posible al diseño del anteproyecto.

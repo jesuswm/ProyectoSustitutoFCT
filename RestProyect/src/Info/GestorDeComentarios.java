@@ -49,7 +49,7 @@ public class GestorDeComentarios {
 					}
 				}
 				if(amigos || !privado || idCreadorPost==id) {
-					rs=bd.consulta("select * from comentarios where id_post="+idPost);	
+					rs=bd.consulta("select comentarios.id,id_post,id_creador,contenido,fecha,usuarios.nombre from comentarios join usuarios on usuarios.id=comentarios.id_creador where id_post="+idPost);	
 					try {
 						while (rs.next()) {
 							Comentarios comentario=new Comentarios();
@@ -58,6 +58,7 @@ public class GestorDeComentarios {
 							comentario.setIdCreador(rs.getInt(3));
 							comentario.setContenido(rs.getString(4));
 							comentario.setFecha(rs.getDate(5));
+							comentario.setAutor(rs.getString(6));
 							comentarios.add(comentario);
 						}
 					} catch (SQLException e) {

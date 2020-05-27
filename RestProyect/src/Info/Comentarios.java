@@ -10,6 +10,7 @@ public class Comentarios {
 	private int idCreador;
 	private int idPost;
 	private String contenido;
+	private String autor;
 	private Date fecha;
 	
 	public Comentarios() {
@@ -52,5 +53,10 @@ public class Comentarios {
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
-	
+	public String getAutor() {
+		return autor;
+	}
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
 }
