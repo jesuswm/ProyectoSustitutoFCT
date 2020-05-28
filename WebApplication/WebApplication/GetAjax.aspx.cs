@@ -32,6 +32,7 @@ namespace WebApplication
             string idpost;
             string idpeticion;
             string aceptar;
+            string busqueda;
             string contraseña;
             switch (op) {
                 case "login":
@@ -198,6 +199,24 @@ namespace WebApplication
                         {
                             result = reader.ReadToEnd();
                             HttpContext.Current.Response.Write("1");
+                        }
+                    }
+                    catch (System.Net.WebException)
+                    {
+                        HttpContext.Current.Response.Write("0");
+                    }
+                    break;
+                case "busqueda":
+                    busqueda= HttpContext.Current.Request.Params["buscado"];
+                    uri = new Uri(restUrl + "/Usuarios/Buscar?token=" + HttpContext.Current.Session["token"] + "&busqueda=" + busqueda);
+                    try
+                    {
+                        webrequest = (HttpWebRequest)System.Net.WebRequest.Create(uri);
+                        using (WebResponse response = webrequest.GetResponse())
+                        using (reader = new StreamReader(response.GetResponseStream()))
+                        {
+                            result = reader.ReadToEnd();
+                            HttpContext.Current.Response.Write(result);
                         }
                     }
                     catch (System.Net.WebException)

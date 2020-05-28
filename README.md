@@ -70,3 +70,19 @@ ProyectoSustitutoFCT
 	* Trabajando en la "PaginaPrincipal" para que en ella se mostraran los post de nuestro usuario y las peticiones de amistad junto a los botones de aceptar o rechazar la petición.
 	
 	* Dándole formato a la "PaginaPrincipal" para que sea lo más similar posible al diseño del anteproyecto.
+
+# 28/05/2020
+
+1. Trabajando en la aplicación web
+
+	* Dándole formato a la página "PaginaPrincipal"
+
+		* Agregado un “loader” mientras se carga el contenido de la página.
+
+	* Creación de la página de “Buscar” en la que se nos mostrarán los resultados de la búsqueda de usuarios.
+
+	* Dándole formato a la página “Buscar”
+
+	* Ahora en la página de “Login” se muestra un mensaje de error al intentar loguearte sin rellenar todos los campos.
+
+	* Mejoras en el formato de la página de “Register”.

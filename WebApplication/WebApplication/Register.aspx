@@ -10,7 +10,7 @@
     <script src="JS/jquery-3.5.1.min.js"></script>
     <script src="JS/Registro.js"></script>
 </head>
-<body>
+<body id="body-register">
 <div class="register-page">
     <div class="form">
         <form class="register-form" action="Login.aspx">

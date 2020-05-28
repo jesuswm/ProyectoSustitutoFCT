@@ -7,7 +7,9 @@ function manejadorRedimension() {
     $("#peticiones").height($("#peticiones").parent().height()- 22);
 }
 function inicializar() {
-    $("body").hide();
+    //$("body").hide();
+    $(".contenedor").hide();
+    $(".carga").show();
     var miNombre;
     $.ajax({
         url: "GetAjax.aspx?op=miUsuario",
@@ -127,7 +129,8 @@ function inicializar() {
                                                     $("#peticiones").append(elDivPeticion);;
                                                 })
                                             }
-                                            $("body").show();
+                                            $(".carga").hide();
+                                            $(".contenedor").show();
                                             manejadorRedimension();
                                         }
                                     });

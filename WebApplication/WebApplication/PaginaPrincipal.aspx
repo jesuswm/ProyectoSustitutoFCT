@@ -11,17 +11,19 @@
     <link href="CSS/PaginaPrincipal.css" rel="stylesheet" />
     <script src="JS/jquery-3.5.1.min.js"></script>
     <script src="JS/Pagina_princial.js"></script>
+    <script src="JS/BarraBusqueda.js"></script>
 </head>
 <body>
     <div class="topnav">
         <a class="active" href="PaginaPrincipal.aspx">Home</a>
         <div class="search-container">
-            <form action="Buscar.aspx">
-                <input type="text" placeholder="Buscar usuarios" name="search"/>
+            <form id="form-busqueda" action="Buscar.aspx">
+                <input id="inp-busqueda"type="text" placeholder="Buscar usuarios" name="search"/>
                 <button type="submit">buscar</button>
             </form>
         </div>
     </div>
+    <div class ="carga"></div>
     <div class="contenedor">
       <div class="row">
         <div class="col-md" id="user-info">

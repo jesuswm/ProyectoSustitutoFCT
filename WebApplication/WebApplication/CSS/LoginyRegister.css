@@ -6,8 +6,11 @@
 
 .register-page {
     width: 360px;
-    padding: 8% 0 0;
+    padding: 4% 0 0;
     margin: auto;
+}
+#body-register{
+    overflow-y:hidden;
 }
 
 .form {
@@ -122,5 +125,10 @@ body {
     font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+@media screen and (max-height: 629px) {
+    #body-register {
+        overflow-y: auto;
+    }
 }
 
