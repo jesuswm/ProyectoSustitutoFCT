@@ -146,6 +146,9 @@ function inicializar() {
         manejadorRedimension();
     })
     manejadorRedimension();
+    $("#btNewPost").click(function (e) {
+        window.location.href = "CrearPost.aspx";
+    });
 }
 function contestarPeticion(idPeticion,aceptar) {
     $.ajax({

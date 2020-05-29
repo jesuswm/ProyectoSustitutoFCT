@@ -86,3 +86,12 @@ ProyectoSustitutoFCT
 	* Ahora en la página de “Login” se muestra un mensaje de error al intentar loguearte sin rellenar todos los campos.
 
 	* Mejoras en el formato de la página de “Register”.
+
+# 29/05/2020
+
+	* Creación de la página de “CrearPost”.
+
+	* Dándole formato a la página “CrearPost”.
+
+	* Haciendo video explicativo de avance semanal.
+

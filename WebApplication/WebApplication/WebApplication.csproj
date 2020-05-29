@@ -68,19 +68,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Buscar.aspx" />
+    <Content Include="CrearPost.aspx" />
     <Content Include="CSS\BarraBusqueda.css" />
     <Content Include="CSS\bootstrap.min.css" />
     <Content Include="CSS\Buscar.css" />
+    <Content Include="CSS\CrearPost.css" />
     <Content Include="CSS\LoginyRegister.css" />
     <Content Include="CSS\PaginaPrincipal.css" />
+    <Content Include="CSS\summernote.min.css" />
     <Content Include="GetAjax.aspx" />
     <Content Include="JS\BarraBusqueda.js" />
     <Content Include="JS\bootstrap.bundle.min.js" />
     <Content Include="JS\Buscar.js" />
+    <Content Include="JS\CrearPost.js" />
     <Content Include="JS\Entrar.js" />
     <Content Include="JS\jquery-3.5.1.min.js" />
     <Content Include="JS\Pagina_princial.js" />
     <Content Include="JS\Registro.js" />
+    <Content Include="JS\summernote.min.js" />
     <Content Include="Register.aspx" />
     <Content Include="Web.config" />
     <Content Include="Login.aspx" />
@@ -93,6 +98,13 @@
     </Compile>
     <Compile Include="Buscar.aspx.designer.cs">
       <DependentUpon>Buscar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CrearPost.aspx.cs">
+      <DependentUpon>CrearPost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CrearPost.aspx.designer.cs">
+      <DependentUpon>CrearPost.aspx</DependentUpon>
     </Compile>
     <Compile Include="GetAjax.aspx.cs">
       <DependentUpon>GetAjax.aspx</DependentUpon>
@@ -125,6 +137,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CSS\font\summernote.eot" />
+    <Content Include="CSS\font\summernote.ttf" />
+    <Content Include="CSS\font\summernote.woff" />
+    <Content Include="CSS\font\summernote.woff2" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

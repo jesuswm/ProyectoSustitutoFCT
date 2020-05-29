@@ -1,0 +1,68 @@
+﻿html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.contenedor {
+    height: calc(100% - 54px);
+    width: 100%;
+}
+
+.row {
+    height: calc(100% - 54px);
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+#cont-form {
+    overflow-y: auto;
+    background: aliceblue;
+    padding: 0px;
+    border: 1px solid #ccc !important;
+    border-radius: 16px;
+}
+#div-res {
+    padding: 0px;
+}
+.note-editable{
+    background: white;
+}
+.panel-heading {
+    background: antiquewhite;
+}
+#div-radios{
+    text-align: center;
+}
+
+#div-botPublicar{
+    text-align: center;
+}
+
+#botPublicar {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #4CAF50;
+    width: 75%;
+    border: 0;
+    padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+    #botPublicar:hover, #botPublicar:active, #botPublicar:focus {
+        background: #43A047;
+    }
+
+    #botPublicar:disabled {
+        background: #195a1c;
+    }
