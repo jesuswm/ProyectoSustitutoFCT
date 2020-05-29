@@ -89,9 +89,10 @@ ProyectoSustitutoFCT
 
 # 29/05/2020
 
+1. Trabajando en la aplicación web
+
 	* Creación de la página de “CrearPost”.
 
 	* Dándole formato a la página “CrearPost”.
 
-	* Haciendo video explicativo de avance semanal.
-
+	* Haciendo vídeo explicativo de avance semanal.
