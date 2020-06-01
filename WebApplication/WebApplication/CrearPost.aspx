@@ -34,9 +34,9 @@
                 <form>
                     <div id="div-radios">
                         Tipo de post: <br />
-                        <input type="radio" id="publico" name="publico" value="publico" checked="checked"/>
+                        <input type="radio" id="publico" name="publico" value="false" checked="checked"/>
                         <label for="male">Público</label><br />
-                        <input type="radio" id="privado" name="publico" value="privado"/>
+                        <input type="radio" id="privado" name="publico" value="true"/>
                         <label for="female">Solo visible para amigos</label><br />
                     </div>
                     <div id="summernote"></div>

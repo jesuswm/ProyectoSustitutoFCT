@@ -96,3 +96,17 @@ ProyectoSustitutoFCT
 	* Dándole formato a la página “CrearPost”.
 
 	* Haciendo vídeo explicativo de avance semanal.
+	
+# 1/06/2020
+
+1. Cambios en el servicio REST
+
+	* Ahora la función comentariosPost de la Clase GestorDeComentarios devuelve los comentarios ordenados del más reciente al más antiguo.
+
+	* Ahora la función obtenerPost de la Clase GestorDePosts devuelve los post ordenados del más reciente al más antiguo.
+
+2. Trabajando en la aplicación web
+
+	* Trabajando en la página de “CrearPost” ya se pueden publicar posts.
+
+	* Arreglado un error en la página de “PaginaPrincipal” que causaba que en la fecha de los comentarios se mostrara la fecha del post al que hacían referencia.

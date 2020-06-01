@@ -49,7 +49,7 @@ public class GestorDeComentarios {
 					}
 				}
 				if(amigos || !privado || idCreadorPost==id) {
-					rs=bd.consulta("select comentarios.id,id_post,id_creador,contenido,fecha,usuarios.nombre from comentarios join usuarios on usuarios.id=comentarios.id_creador where id_post="+idPost);	
+					rs=bd.consulta("select comentarios.id,id_post,id_creador,contenido,fecha,usuarios.nombre from comentarios join usuarios on usuarios.id=comentarios.id_creador where id_post="+idPost+" order by comentarios.fecha desc");	
 					try {
 						while (rs.next()) {
 							Comentarios comentario=new Comentarios();

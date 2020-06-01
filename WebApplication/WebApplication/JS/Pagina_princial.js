@@ -83,7 +83,7 @@ function inicializar() {
                                                     $.each(jsonObject2, function (i2, item2) {
                                                         var elDivfechacom = $("<div class=\"comFecha\"></div >");
                                                             var elDivcomentario = $("<div class=\"comentario\"></div >");
-                                                            elDivfechacom.append("Fecha comentario: "+item.fecha.substring(0, item2.fecha.length - 1));
+                                                            elDivfechacom.append("Fecha comentario: "+item2.fecha.substring(0, item2.fecha.length - 1));
                                                             elDivcomentario.append(elDivfechacom);
                                                             elDivcomentario.append("<a href=\"Buscar.aspx?id=" + item2.idCreador + "\">" + item2.autor + "</a> <br/>");
                                                             elDivcomentario.append(item2.contenido + "<br/>");

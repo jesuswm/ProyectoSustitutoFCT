@@ -40,7 +40,7 @@ public class GestorDePosts {
 				}
 				//System.out.println("Amigos: "+amigos);
 				rs.close();
-				rs=bd.consulta("select * from post where id_creador="+idCreador);
+				rs=bd.consulta("select * from post where id_creador="+idCreador+" order by fecha desc");
 				try {
 					while (rs.next()) {
 						Posts post=new Posts(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getBoolean(4),rs.getDate(5));
@@ -78,7 +78,7 @@ public class GestorDePosts {
 				//System.out.println(id);
 				Bd bd=new Bd();
 				bd.conecta("proyecto_fct");
-				ResultSet rs=bd.consulta("select * from post where id_creador="+id);
+				ResultSet rs=bd.consulta("select * from post where id_creador="+id+" order by fecha desc");
 				try {
 					while (rs.next()) {
 						Posts post=new Posts(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getBoolean(4),rs.getDate(5));
@@ -109,6 +109,7 @@ public class GestorDePosts {
 				bd.conecta("proyecto_fct");
 				int id=GenerarTokens.obtenerIdUsuario(token);
 				int resultados=bd.consulta2("INSERT INTO post(post.contenido,post.id_creador,post.privado) VALUES ('"+post.getContenido()+"',"+id+","+post.isPrivado()+")");
+				//System.out.println("INSERT INTO post(post.contenido,post.id_creador,post.privado) VALUES ('"+post.getContenido()+"',"+id+","+post.isPrivado()+")");
 				bd.cierraBd();
 				return Response.status(Status.ACCEPTED).build();
 			} catch (ClassNotFoundException | SQLException e) {

@@ -34,6 +34,9 @@ namespace WebApplication
             string aceptar;
             string busqueda;
             string contraseña;
+            string contenidoPost;
+            string privado;
+            HttpWebRequest request;
             switch (op) {
                 case "login":
                     email = HttpContext.Current.Request.Params["email"];
@@ -78,7 +81,7 @@ namespace WebApplication
                     string contenido = "{ \"email\": \""+ email + "\", \"nombre\": \""+nombre+"\",\"pass\": \""+contraseña+"\"}";
                     bytePost = encoding.GetBytes(contenido);
                     uri = new Uri(restUrl + "/Usuarios/Crear");
-                    HttpWebRequest request =(HttpWebRequest)WebRequest.Create(uri);
+                    request =(HttpWebRequest)WebRequest.Create(uri);
                     request.Method = "POST";
                     request.ContentType = "application/json";
                     request.ContentLength = bytePost.Length;
@@ -220,6 +223,29 @@ namespace WebApplication
                         }
                     }
                     catch (System.Net.WebException)
+                    {
+                        HttpContext.Current.Response.Write("0");
+                    }
+                    break;
+                case "CrearPost":
+                    contenidoPost = HttpContext.Current.Request.Params["contenido"];
+                    privado = HttpContext.Current.Request.Params["privado"];
+                    contenido = "{ \"contenido\": \"" + contenidoPost + "\", \"privado\": \"" + privado + "\"}";
+                    bytePost = encoding.GetBytes(contenido);
+                    uri = new Uri(restUrl + "/Posts/Crear?token="+ HttpContext.Current.Session["token"]);
+                    request = (HttpWebRequest)WebRequest.Create(uri);
+                    request.Method = "POST";
+                    request.ContentType = "application/json";
+                    using (StreamWriter newStream = new StreamWriter(request.GetRequestStream()))
+                    {
+                        newStream.Write(contenido);
+                    }
+                    try
+                    {
+                        HttpWebResponse respon = request.GetResponse() as HttpWebResponse;
+                        HttpContext.Current.Response.Write("1");
+                    }
+                    catch (System.Net.WebException e)
                     {
                         HttpContext.Current.Response.Write("0");
                     }

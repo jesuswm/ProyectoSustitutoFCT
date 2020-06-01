@@ -15,10 +15,47 @@ function inicializar() {
         height: "500px",
         toolbar: [
             ['font', ['bold', 'underline', 'clear']],
-            ['color', ['color']],
             ['insert', ['link']],
         ]
     });
+    $("#botPublicar").click(function () {
+        if ($('#summernote').summernote('isEmpty') == false) {
+            var radioValue = $("input[name='publico']:checked").val();
+            var contenido = $('#summernote').summernote('code');
+            contenido = contenido.replace(/"/g, "\\\"");
+            contenido = contenido.replace(/&nbsp;/g, " ");
+            alert(contenido);
+            $.ajax({
+                url: "GetAjax.aspx?op=miUsuario",
+                dataType: "json",
+                method: "GET",
+                crossDomain: true,
+                success: function (result) {
+                    if ("0".localeCompare(result) == 0) {
+                        window.location.href = "Login.aspx";
+                    } else {
+                        $.ajax({
+                            url: "GetAjax.aspx?op=CrearPost&contenido=" + contenido + "&privado=" + radioValue,
+                            // dataType: "json",
+                            method: "GET",
+                            crossDomain: true,
+                            success: function (result) {
+                                if ("1".localeCompare(result) == false) {
+                                    window.location.href = "PaginaPrincipal.aspx";
+                                } else {
+                                    alert("No se ha podido publicar el post");
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+        } else {
+            alert("Introduzca un contenido en su post");
+        }
+        return false;
+    });
+    
     $(window).on("resize", function () {
         manejadorRedimension();
     })
