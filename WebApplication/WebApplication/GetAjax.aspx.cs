@@ -33,6 +33,8 @@ namespace WebApplication
             string idpeticion;
             string aceptar;
             string busqueda;
+            string contenido;
+            string viejaContraseña;
             string contraseña;
             string contenidoPost;
             string privado;
@@ -78,7 +80,7 @@ namespace WebApplication
                     nombre = HttpContext.Current.Request.Params["nombre"];
                     email = HttpContext.Current.Request.Params["email"];
                     contraseña = HttpContext.Current.Request.Params["pass"];
-                    string contenido = "{ \"email\": \""+ email + "\", \"nombre\": \""+nombre+"\",\"pass\": \""+contraseña+"\"}";
+                    contenido = "{ \"email\": \""+ email + "\", \"nombre\": \""+nombre+"\",\"pass\": \""+contraseña+"\"}";
                     bytePost = encoding.GetBytes(contenido);
                     uri = new Uri(restUrl + "/Usuarios/Crear");
                     request =(HttpWebRequest)WebRequest.Create(uri);
@@ -240,6 +242,68 @@ namespace WebApplication
                     {
                         newStream.Write(contenido);
                     }
+                    try
+                    {
+                        HttpWebResponse respon = request.GetResponse() as HttpWebResponse;
+                        HttpContext.Current.Response.Write("1");
+                    }
+                    catch (System.Net.WebException e)
+                    {
+                        HttpContext.Current.Response.Write("0");
+                    }
+                    break;
+                case "modificarUsuario":
+                    nombre = HttpContext.Current.Request.Params["nombre"];
+                    email = HttpContext.Current.Request.Params["email"];
+                    contraseña = HttpContext.Current.Request.Params["newPass"];
+                    viejaContraseña = HttpContext.Current.Request.Params["OldPass"];
+                    contenido = "{ ";
+                    bool coma = false;
+                    if (nombre != null)
+                    {
+                        contenido=contenido+"\"nombre\": \"" + nombre+"\"";
+                        coma = true;
+                    }
+                    if (email != null)
+                    {
+                        if (coma)
+                        {
+                            contenido = contenido + ", \"email\": \"" + email + "\"";
+                        }
+                        else
+                        {
+                            contenido = contenido + " \"email\": \"" + email + "\"";
+                            coma = true;
+                        }
+                    }
+                    if (contraseña != null)
+                    {
+                        if (coma)
+                        {
+                            contenido = contenido+ ", \"pass\": \"" + contraseña + "\"";
+                        }
+                        else
+                        {
+                            contenido = contenido+ " \"pass\": \"" + contraseña + "\"";
+                            coma = true;
+                        }
+                    }
+                    contenido = contenido + " }";
+                    //contenido = "{ \"email\": \"" + email + "\", \"nombre\": \"" + nombre + "\",\"pass\": \"" + contraseña + "\"}";
+                    bytePost = encoding.GetBytes(contenido);
+                    uri = new Uri(restUrl + "/Usuarios/Modificar?token=" + HttpContext.Current.Session["token"] + "&pass=" + viejaContraseña);
+                    request = (HttpWebRequest)WebRequest.Create(uri);
+                    request.Method = "POST";
+                    request.ContentType = "application/json";
+                    request.ContentLength = bytePost.Length;
+                    using (Stream newStream = request.GetRequestStream())
+                    {
+                        newStream.Write(bytePost, 0, bytePost.Length);
+                    }
+                    //request.Headers.Add("username", "miUsuario");
+                    //request.Headers.Add("password", "MiClave");
+                    //request.Headers.Add("grant_type", "Migrant_type");
+                    //request.Headers.Add("client_id", "Miclient_id");
                     try
                     {
                         HttpWebResponse respon = request.GetResponse() as HttpWebResponse;

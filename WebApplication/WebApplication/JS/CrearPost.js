@@ -15,7 +15,9 @@ function inicializar() {
         height: "500px",
         toolbar: [
             ['font', ['bold', 'underline', 'clear']],
-            ['insert', ['link']],
+            ['fontsize', ['fontsize']],
+            ['para', ['ul', 'ol','paragraph']],
+            ['insert', ['link']]
         ]
     });
     $("#botPublicar").click(function () {

@@ -24,7 +24,7 @@ function inicializar() {
                 $("#info").append("<label style=\"font-weight: 900;\">Tu usuario</label><br/>");
                 $("#info").append(result.nombre + "<br/>");
                 $("#info").append(result.email + "<br/>");
-                $("#info").append("<a href=\"#\">Editar perfil</a><br/>");
+                $("#info").append("<a href=\"EditarPerfil.aspx\">Editar perfil</a><br/>");
                 $("#info").append("<a id=\"cerrar\" href=\"#\">Cerrar sesión</a><br/>");
                 miNombre = result.nombre;
                 //$("#info").append("<hr/>");

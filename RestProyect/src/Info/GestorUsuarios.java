@@ -183,4 +183,63 @@ public class GestorUsuarios {
 			return Response.status(Status.BAD_REQUEST).header("error","Token caducado o inexistente").build();
 		}
 	}
+	@Path("Modificar")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@POST
+	public Response modificarUsuario(@QueryParam("token") String token,@QueryParam("pass") String oldpas,Usuarios user) {
+		if(GenerarTokens.comprobarCaducidad(token)) {
+			Bd bd=new Bd();
+			try {
+				bd.conecta("proyecto_fct");
+				boolean correcto=false;
+				ResultSet rs=bd.consulta("select count(*) from usuarios JOIN tokens on usuarios.id=tokens.id_usuario where tokens.token='"+token+"' && usuarios.`contraseña`=MD5('"+oldpas+"')");
+				try {
+					while (rs.next()) {
+						if(rs.getInt(1)>0) {
+							correcto=true;
+						}else {
+							return Response.status(Status.BAD_REQUEST).header("error","parametro de pass incorrecto").build();
+						}
+					}
+					rs.close();
+				} catch (SQLException e) {
+					return Response.status(Status.BAD_REQUEST).header("error", e.getLocalizedMessage()).build();
+				}
+				boolean coma=false;
+				int id=GenerarTokens.obtenerIdUsuario(token);
+				String consulta="UPDATE `proyecto_fct`.`usuarios` SET ";
+				if(user.getNombre()!=null) {
+					consulta=consulta+"usuarios.nombre = '"+user.getNombre()+"' ";
+					coma=true;
+				}
+				if(user.getEmail()!=null) {
+					if(coma==true) {
+						consulta=consulta+",usuarios.email = '"+user.getEmail()+"' ";						
+					}else {
+						consulta=consulta+"usuarios.email = '"+user.getEmail()+"' ";	
+						coma=true;
+					}
+				}
+				if(user.getPass()!=null) {
+					if(coma==true) {
+						consulta=consulta+",usuarios.`contraseña` = MD5('"+user.getPass()+"')";
+					}else {
+						consulta=consulta+"usuarios.`contraseña` = MD5('"+user.getPass()+"')";
+						coma=true;
+					}
+				}
+				consulta=consulta+" WHERE  `id`="+id;
+				//System.out.println(consulta);
+				int resultados=bd.consulta2(consulta);
+				bd.cierraBd();
+				return Response.status(Status.ACCEPTED).build();
+			} catch (ClassNotFoundException | SQLException e) {
+				// TODO Auto-generated catch block
+				return Response.status(Status.BAD_REQUEST).header("error", e.getLocalizedMessage()).build();
+			}
+		}else {
+			return Response.status(Status.BAD_REQUEST).header("error","Token caducado o inexistente").build();
+		}
+	}
+		
 }

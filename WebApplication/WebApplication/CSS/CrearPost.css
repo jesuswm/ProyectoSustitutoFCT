@@ -31,13 +31,27 @@ body {
 #div-res {
     padding: 0px;
 }
-.note-editable{
+.note-editable {
     background: white;
+    border: 1px solid rgba(0,0,0,.2);
+}
+.note-editor.note-airframe, .note-editor.note-frame{
+    border: none;
+}
+.note-editor {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+.note-editor .note-toolbar, .note-popover .popover-content {
+    border: 1px solid rgba(0,0,0,.2);
 }
 .panel-heading {
     background: antiquewhite;
 }
-#div-radios{
+.note-resizebar{
+    display:none;
+}
+#div-radios {
     text-align: center;
 }
 

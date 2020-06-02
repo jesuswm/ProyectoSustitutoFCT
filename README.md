@@ -110,3 +110,21 @@ ProyectoSustitutoFCT
 	* Trabajando en la página de “CrearPost” ya se pueden publicar posts.
 
 	* Arreglado un error en la página de “PaginaPrincipal” que causaba que en la fecha de los comentarios se mostrara la fecha del post al que hacían referencia.
+
+# 2/06/2020
+
+1. Cambios en el servicio REST
+
+	* Creación del método POST modificarUsuario  en la clase GestorUsuarios que pasando como parámetro nuestro token de autentificación y la contraseña del usuario propietario del token nos permite modificar los datos del usuario en base a un json mandado en el cuerpo de la petición.
+
+2. Trabajando en la aplicación web
+
+	* Trabajando en la página de “CrearPost”:
+
+		* Cambios en el formato
+
+		* Añadidas más opciones en el cuadro de redacción de post (tamaño de letra y alineación del texto).
+
+	* Creación de la página de “EditarPerfil” desde la que podremos cambiar los datos de nuestro usuario.
+	
+	* Dándole formato a la página “EditarPerfil”.
