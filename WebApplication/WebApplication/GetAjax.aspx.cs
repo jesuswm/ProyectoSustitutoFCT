@@ -314,6 +314,61 @@ namespace WebApplication
                         HttpContext.Current.Response.Write("0");
                     }
                     break;
+                case "usuarioPorId":
+                    busqueda = HttpContext.Current.Request.Params["idBuscado"];
+                    uri = new Uri(restUrl + "/Usuarios?token=" + HttpContext.Current.Session["token"] + "&idBuscado=" + busqueda);
+                    try
+                    {
+                        webrequest = (HttpWebRequest)System.Net.WebRequest.Create(uri);
+                        using (WebResponse response = webrequest.GetResponse())
+                        using (reader = new StreamReader(response.GetResponseStream()))
+                        {
+                            result = reader.ReadToEnd();
+                            HttpContext.Current.Response.Write(result);
+                        }
+                    }
+                    catch (System.Net.WebException)
+                    {
+                        HttpContext.Current.Response.Write("0");
+                    }
+                    break;
+                case "comprobarAmistad":
+                    busqueda = HttpContext.Current.Request.Params["idBuscado"];
+                    uri = new Uri(restUrl + "/Amigos/Comprobar?token=" + HttpContext.Current.Session["token"] + "&idBuscado=" + busqueda);
+                    try
+                    {
+                        webrequest = (HttpWebRequest)System.Net.WebRequest.Create(uri);
+                        using (WebResponse response = webrequest.GetResponse())
+                        using (reader = new StreamReader(response.GetResponseStream()))
+                        {
+                            result = reader.ReadToEnd();
+                            HttpContext.Current.Response.Write(result);
+                        }
+                    }
+                    catch (System.Net.WebException)
+                    {
+                        HttpContext.Current.Response.Write("0");
+                    }
+                    break;
+                case "solicitarAmistad":
+                    idpeticion = HttpContext.Current.Request.Params["idSolicitado"];
+                    uri = new Uri(restUrl + "/Peticiones/Crear?token=" + HttpContext.Current.Session["token"] + "&idSolicitado=" + idpeticion);
+                    try
+                    {
+                        webrequest = (HttpWebRequest)System.Net.WebRequest.Create(uri);
+                        webrequest.Method = "POST";
+                        using (WebResponse response = webrequest.GetResponse())
+                        using (reader = new StreamReader(response.GetResponseStream()))
+                        {
+                            result = reader.ReadToEnd();
+                            HttpContext.Current.Response.Write(result);
+                        }
+                    }
+                    catch (System.Net.WebException)
+                    {
+                        HttpContext.Current.Response.Write("0");
+                    }
+                    break;
                 case "cerrar":
                     HttpContext.Current.Session.Remove("token");
                     HttpContext.Current.Response.Write("1");

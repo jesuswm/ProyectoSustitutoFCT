@@ -45,7 +45,7 @@ function inicializar() {
                             var jsonObject = jQuery.parseJSON(JSON.stringify(result));
                             $.each(jsonObject, function (i, item) {
                                 var elDiv = $("<div class=\"div-amigo idAmigo" + item.id + "\"></div > ");
-                                elDiv.append("<a href=\"Buscar.aspx?id=" + item.id + "\">"+item.nombre+"</a> <br/>");
+                                elDiv.append("<a href=\"PantallaOtroUsuario.aspx?id=" + item.id + "\">"+item.nombre+"</a> <br/>");
                                 elDiv.append(item.email + "<br/>");
                                 $("#amigos").append(elDiv);
                             });
@@ -85,7 +85,7 @@ function inicializar() {
                                                             var elDivcomentario = $("<div class=\"comentario\"></div >");
                                                             elDivfechacom.append("Fecha comentario: "+item2.fecha.substring(0, item2.fecha.length - 1));
                                                             elDivcomentario.append(elDivfechacom);
-                                                            elDivcomentario.append("<a href=\"Buscar.aspx?id=" + item2.idCreador + "\">" + item2.autor + "</a> <br/>");
+                                                        elDivcomentario.append("<a href=\"PantallaOtroUsuario.aspx?id=" + item2.idCreador + "\">" + item2.autor + "</a> <br/>");
                                                             elDivcomentario.append(item2.contenido + "<br/>");
                                                             elDivComentarios.append(elDivcomentario);
                                                     })

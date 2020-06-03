@@ -29,7 +29,7 @@ function inicializar() {
                     var jsonObject = jQuery.parseJSON(JSON.stringify(result));
                     $.each(jsonObject, function (i, item) {
                         var elDiv = $("<div class=\"resultado\"></div > ");
-                        elDiv.append("<a href=\"OtroUsuario.aspx?id=" + item.id + "\">" + item.nombre + "</a> <br/>");
+                        elDiv.append("<a href=\"PantallaOtroUsuario.aspx?id=" + item.id + "\">" + item.nombre + "</a> <br/>");
                         elDiv.append(item.email + "<br/>");
                         $("#resultados").append(elDiv);
                         nres++;

@@ -128,3 +128,19 @@ ProyectoSustitutoFCT
 	* Creación de la página de “EditarPerfil” desde la que podremos cambiar los datos de nuestro usuario.
 	
 	* Dándole formato a la página “EditarPerfil”.
+	
+# 3/06/2020
+
+1. Cambios en el servicio REST
+
+	* Creación del método GET comprobarAmistad en la clase GestorDeAmigos  que pasando como parámetro nuestro token de autentificación y la id de un usuario nos permite comprobar la relación actual entre ambos usuarios (amigos, pendiente de respuesta o desconocidos).
+
+	* Se ha modificado el método GET obtenerUsuario en la clase GestorUsuarios ahora pasando como parámetro nuestro token de autentificación y la id de un usuario nos devolverá un json con la información del usuario (nombre, email …) al que le pertenece la id.
+
+2. Trabajando en la aplicación web
+
+	* Creación de la página de “PantallaOtroUsuario”
+
+		* Dándole formato a la página 
+
+		* Trabajando para que se muestre la información del usuario y posibilitar él envió de la petición de amistad en caso de que el usuario consultado no sea tu amigo.

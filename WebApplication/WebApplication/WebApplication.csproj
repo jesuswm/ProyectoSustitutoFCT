@@ -76,6 +76,7 @@
     <Content Include="CSS\EditarPerfil.css" />
     <Content Include="CSS\LoginyRegister.css" />
     <Content Include="CSS\PaginaPrincipal.css" />
+    <Content Include="CSS\PantallaOtroUsuario.css" />
     <Content Include="CSS\summernote.min.css" />
     <Content Include="EditarPerfil.aspx" />
     <Content Include="GetAjax.aspx" />
@@ -87,8 +88,10 @@
     <Content Include="JS\Entrar.js" />
     <Content Include="JS\jquery-3.5.1.min.js" />
     <Content Include="JS\Pagina_princial.js" />
+    <Content Include="JS\PantallaOtroUsuario.js" />
     <Content Include="JS\Registro.js" />
     <Content Include="JS\summernote.min.js" />
+    <Content Include="PantallaOtroUsuario.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Web.config" />
     <Content Include="Login.aspx" />
@@ -122,6 +125,13 @@
     </Compile>
     <Compile Include="GetAjax.aspx.designer.cs">
       <DependentUpon>GetAjax.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaOtroUsuario.aspx.cs">
+      <DependentUpon>PantallaOtroUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PantallaOtroUsuario.aspx.designer.cs">
+      <DependentUpon>PantallaOtroUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Login.aspx.cs">

@@ -20,27 +20,38 @@ import javax.ws.rs.core.Response.Status;
 public class GestorUsuarios {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response obtenerUsuario() {
-		ArrayList<Usuarios> usuarios=new ArrayList<Usuarios>();
-		try {
-			Bd bd=new Bd();
-			bd.conecta("proyecto_fct");
-			ResultSet rs=bd.consulta("select * from usuarios");
+	public Response obtenerUsuario(@QueryParam("token") String token, @QueryParam("idBuscado") String idBuscado) {
+		Usuarios usuario=new Usuarios();
+		if(GenerarTokens.comprobarCaducidad(token)) {
 			try {
-				while (rs.next()) {
-					usuarios.add(new Usuarios(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4)));
+				Bd bd=new Bd();
+				bd.conecta("proyecto_fct");
+				ResultSet rs=bd.consulta("select id,nombre,email from usuarios where id="+idBuscado);
+				boolean existe=false;
+				try {
+					while (rs.next()) {
+						usuario.setId(rs.getInt(1));
+						usuario.setNombre(rs.getString(2));
+						usuario.setEmail(rs.getString(3));
+						existe=true;
+					}
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
-			} catch (SQLException e) {
+				bd.cierraBd();
+				if(!existe) {
+					return Response.status(Status.BAD_REQUEST).header("error","No existe usuario con esa id").build();
+				}
+				return Response.ok(usuario).build();
+			} catch (ClassNotFoundException | SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			bd.cierraBd();
-			return Response.ok(usuarios).build();
-		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		}else {
+			return Response.status(Status.BAD_REQUEST).header("error","Token caducado o inexistente").build();
 		}
-		return Response.ok(usuarios).build();
+		return Response.status(Status.BAD_REQUEST).build();
 	}
 	@Path("Crear")
 	@Consumes(MediaType.APPLICATION_JSON)
