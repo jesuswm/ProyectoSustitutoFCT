@@ -369,6 +369,42 @@ namespace WebApplication
                         HttpContext.Current.Response.Write("0");
                     }
                     break;
+                case "buscarAmigosOtroUsuario":
+                    busqueda = HttpContext.Current.Request.Params["idBuscado"];
+                    uri = new Uri(restUrl + "/Amigos/OtroUsuario?token=" + HttpContext.Current.Session["token"] + "&idBuscado=" + busqueda);
+                    try
+                    {
+                        webrequest = (HttpWebRequest)System.Net.WebRequest.Create(uri);
+                        using (WebResponse response = webrequest.GetResponse())
+                        using (reader = new StreamReader(response.GetResponseStream()))
+                        {
+                            result = reader.ReadToEnd();
+                            HttpContext.Current.Response.Write(result);
+                        }
+                    }
+                    catch (System.Net.WebException)
+                    {
+                        HttpContext.Current.Response.Write("0");
+                    }
+                    break;
+                case "posts":
+                    busqueda = HttpContext.Current.Request.Params["idBuscado"];
+                    uri = new Uri(restUrl + "/Posts?token=" + HttpContext.Current.Session["token"] + "&idCreador=" + busqueda);
+                    try
+                    {
+                        webrequest = (HttpWebRequest)System.Net.WebRequest.Create(uri);
+                        using (WebResponse response = webrequest.GetResponse())
+                        using (reader = new StreamReader(response.GetResponseStream()))
+                        {
+                            result = reader.ReadToEnd();
+                            HttpContext.Current.Response.Write(result);
+                        }
+                    }
+                    catch (System.Net.WebException)
+                    {
+                        HttpContext.Current.Response.Write("0");
+                    }
+                    break;
                 case "cerrar":
                     HttpContext.Current.Session.Remove("token");
                     HttpContext.Current.Response.Write("1");

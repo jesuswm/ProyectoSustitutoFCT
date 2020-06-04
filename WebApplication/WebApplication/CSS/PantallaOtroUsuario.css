@@ -97,8 +97,30 @@ body {
 #user-post {
     height: 100%;
 }
+.contBtComentar {
+    text-align: center;
+}
 
+.btComentar {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #4CAF50;
+    width: 50%;
+    border: 0;
+    padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+    .btComentar:hover, .btComentar:active, .btComentar:focus {
+        background: #43A047;
+    }
 
+    .btComentar:disabled {
+    background: #8ca98d;
+    }
 #btAmistad {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;

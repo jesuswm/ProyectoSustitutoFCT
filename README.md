@@ -144,3 +144,13 @@ ProyectoSustitutoFCT
 		* Dándole formato a la página 
 
 		* Trabajando para que se muestre la información del usuario y posibilitar él envió de la petición de amistad en caso de que el usuario consultado no sea tu amigo.
+
+# 4/06/2020
+
+1. Cambios en el servicio REST
+
+	* Creación del método GET otroUsuario en la clase GestorDeAmigos que pasando como parámetro nuestro token de autentificación y la id de un usuario nos devuelve un json con los amigos del usuario propietario de la id.
+
+2. Trabajando en la aplicación web
+
+	* Trabajando para que en la “PantallaOtroUsuario” se muestren los amigos y los post (en caso de ser amigos se muestran los post públicos y privados si no solo se muestran los públicos) del usuario propietario de la página.

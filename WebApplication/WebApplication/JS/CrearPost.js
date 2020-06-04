@@ -26,7 +26,6 @@ function inicializar() {
             var contenido = $('#summernote').summernote('code');
             contenido = contenido.replace(/"/g, "\\\"");
             contenido = contenido.replace(/&nbsp;/g, " ");
-            alert(contenido);
             $.ajax({
                 url: "GetAjax.aspx?op=miUsuario",
                 dataType: "json",
