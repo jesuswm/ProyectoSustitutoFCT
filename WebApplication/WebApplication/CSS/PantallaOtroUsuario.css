@@ -162,7 +162,32 @@ body {
     border: 1px solid #ccc !important;
     border-radius: 16px;
 }
+.note-editable {
+    background: white;
+    border: 1px solid rgba(0,0,0,.2);
+}
 
+.note-editor.note-airframe, .note-editor.note-frame {
+    text-align: left;
+    border: none;
+}
+
+.note-editor {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+    .note-editor .note-toolbar, .note-popover .popover-content {
+        border: 1px solid rgba(0,0,0,.2);
+    }
+
+.panel-heading {
+    background: antiquewhite;
+}
+
+.note-resizebar {
+    display: none;
+}
 
 @media screen and (max-width: 768px) {
     html {

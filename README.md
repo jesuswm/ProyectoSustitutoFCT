@@ -154,3 +154,11 @@ ProyectoSustitutoFCT
 2. Trabajando en la aplicación web
 
 	* Trabajando para que en la “PantallaOtroUsuario” se muestren los amigos y los post (en caso de ser amigos se muestran los post públicos y privados si no solo se muestran los públicos) del usuario propietario de la página.
+	
+# 5/06/2020
+
+1. Trabajando en la aplicación web
+
+	* Trabajando para que en la “PantallaOtroUsuario” se nos dé la posibilidad de realizar comentarios a los post del usuario.
+
+2. Haciendo vídeo explicativo de avance semanal.

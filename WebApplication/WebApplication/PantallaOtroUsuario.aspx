@@ -7,9 +7,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Pantalla de otro usuario</title>
     <link href="CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="CSS/summernote.min.css" rel="stylesheet" />
     <link href="CSS/BarraBusqueda.css" rel="stylesheet" />
     <link href="CSS/PantallaOtroUsuario.css" rel="stylesheet" />
     <script src="JS/jquery-3.5.1.min.js"></script>
+    <script src="JS/summernote.min.js"></script>
     <script src="JS/Buscar.js"></script>
     <script src="JS/PantallaOtroUsuario.js"></script>
 </head>

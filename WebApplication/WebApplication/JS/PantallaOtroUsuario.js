@@ -116,7 +116,21 @@
                                                             }
                                                         }
                                                     });
-                                                    elDiv.append("<div class=\"contBtComentar\"><button class=\"btComentar\">Comentar Post</button><div>");
+                                                    var divComentar = $("<div class=\"contBtComentar\" id=\"contBtComentar" + item.id + "\"></div > ");
+                                                    var botonEscribirComentario = $("<button class=\"btComentar\" id=\"btComentar" + item.id + "\">Comentar Post</button><div>");
+                                                    var botonComentar = $("<button class=\"btComentar\" id=\"btEnviarComentario" + item.id + "\">Publicar comentario</button><div>");
+                                                    botonEscribirComentario.click(function (e) {
+                                                        pulsarBotonComentar(item.id);
+                                                    });
+                                                    botonComentar.click(function (e) {
+                                                        comentar(item.id);
+                                                    });
+                                                    botonComentar.hide();
+                                                    divComentar.append(botonEscribirComentario);
+                                                    divComentar.append("<div id=\"summernote" + item.id + "\"></div>")
+                                                    divComentar.append(botonComentar);
+                                                    elDiv.append(divComentar);
+                                                    //elDiv.append("<div class=\"contBtComentar\" id=\"contBtComentar"+item.id+"\"><button class=\"btComentar\">Comentar Post</button><div>");
                                                     elDiv.append(elDivComentarios);
                                                     $("#posts").append(elDiv);
                                                 });
@@ -167,4 +181,38 @@ function solicitarAmistad(idUsuario) {
         }
     });
     $("#btAmistad").prop("disabled", true);
+}
+function pulsarBotonComentar(idPost) {
+    $("#btComentar" + idPost).hide();
+    $("#summernote" + idPost).summernote({
+        tooltip: false,
+        disableResizeEditor: true,
+        placeholder: 'Redacta aqui tu comentario',
+        tabsize: 2,
+        height: "200px",
+        toolbar: [
+            ['font', ['bold', 'underline', 'clear']],
+            ['para', ['ul', 'ol']],
+        ]
+    });
+    $("#btEnviarComentario" + idPost).show();
+}
+function comentar(idPost) {
+    if ($("#summernote" + idPost).summernote('isEmpty') == false) {
+        $.ajax({
+            url: "GetAjax.aspx?op=CrearComentario&contenido=" + $("#summernote" + idPost).summernote('code') + "&idPost=" + idPost,
+            // dataType: "json",
+            method: "GET",
+            crossDomain: true,
+            success: function (result) {
+                if ("1".localeCompare(result) == false) {
+                    location.reload();
+                } else {
+                    alert("No se ha podido publicar el comentario");
+                }
+            }
+        });
+    } else {
+        alert('No puedes publicar un comentario sin contenido')
+    }
 }
