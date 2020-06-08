@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity" >
+
+    <TextView
+        android:id="@+id/textIniciar"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:background="#8D1170D6"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="@string/iniciarSesion"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/imEmail"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/imPass"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/pass"
+        android:inputType="textPassword"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/butEntar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:text="@string/btnEntrar" />
+
+    <TextView
+        android:id="@+id/textNoRegistrado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.05"
+        android:gravity="center"
+        android:text="@string/mensajeRegistrar"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp" />
+
+</LinearLayout>

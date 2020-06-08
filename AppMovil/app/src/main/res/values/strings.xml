@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">AppMovil</string>
+    <string name="iniciarSesion">Iniciar sesión</string>
+    <string name="email">Email</string>
+    <string name="pass">Contraseña</string>
+    <string name="btnEntrar">Entrar</string>
+    <string name="mensajeRegistrar"><u>Aun no estas registrado</u></string>
+    <string name="regustrarse">Registrarse</string>
+    <string name="yaRegistrado">¿Ya estas registrado?</string>
+    <string name="confContraseña">Confirmar contraseña</string>
+    <string name="NombreUsuario">Nombre</string>
+    <string name="tituloError">Se ha devuelto el siguiente error</string>
+</resources>

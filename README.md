@@ -162,3 +162,13 @@ ProyectoSustitutoFCT
 	* Trabajando para que en la “PantallaOtroUsuario” se nos dé la posibilidad de realizar comentarios a los post del usuario.
 
 2. Haciendo vídeo explicativo de avance semanal.
+
+# 8/06/2020
+
+1. Buscando información sobre como consumir un servicio REST desde Android.
+
+2. Comienzo del proyecto de la App móvil lo subiré dentro de la carpeta “AppMovil”.
+
+	* Haciendo diversas pruebas para el consumo del servicio REST.
+
+	* Trabajando en la Activity “LoginActivity”.
