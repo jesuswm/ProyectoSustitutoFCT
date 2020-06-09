@@ -10,4 +10,9 @@
     <string name="confContraseña">Confirmar contraseña</string>
     <string name="NombreUsuario">Nombre</string>
     <string name="tituloError">Se ha devuelto el siguiente error</string>
+    <string name="errorConfContraseña">El valor de contraseña y confirmar contraseña no coinciden</string>
+    <string name="errorCamposVacios">Rellene todos los campos para registrarse</string>
+    <string name="btnCerrarSesion">Cerrar sesión</string>
+    <string name="btnEditarUsuario">Editar usuario</string>
+    <string name="btnCrearPost">Crear nuevo post</string>
 </resources>

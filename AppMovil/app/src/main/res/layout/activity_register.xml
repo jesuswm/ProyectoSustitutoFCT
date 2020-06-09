@@ -5,21 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".LoginActivity" >
+    tools:context=".RegisterActivity">
 
     <TextView
-        android:id="@+id/textIniciar"
+        android:id="@+id/textRegistrar"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="0.2"
         android:background="#8D1170D6"
         android:gravity="center|center_horizontal|center_vertical"
-        android:text="@string/iniciarSesion"
+        android:text="@string/regustrarse"
         android:textSize="30sp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/imEmail"
+        android:id="@+id/imRegNombre"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/NombreUsuario"
+        android:inputType="textEmailAddress"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/imRegEmail"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.1"
@@ -30,7 +41,7 @@
         android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/imPass"
+        android:id="@+id/imRegContraseña"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.1"
@@ -40,21 +51,31 @@
         android:inputType="textPassword"
         android:textSize="18sp" />
 
-    <Button
-        android:id="@+id/butEntrar"
+    <EditText
+        android:id="@+id/imRegConfContraseña"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.1"
-        android:text="@string/btnEntrar" />
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/confContraseña"
+        android:inputType="textPassword"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/butRegister"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:text="@string/regustrarse" />
 
     <TextView
-        android:id="@+id/textNoRegistrado"
+        android:id="@+id/textYaRegistrado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.05"
         android:gravity="center"
-        android:text="@string/mensajeRegistrar"
+        android:text="@string/yaRegistrado"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp" />
-
 </LinearLayout>

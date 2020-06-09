@@ -172,3 +172,11 @@ ProyectoSustitutoFCT
 	* Haciendo diversas pruebas para el consumo del servicio REST.
 
 	* Trabajando en la Activity “LoginActivity”.
+	
+# 9/06/2020
+
+1. Trabajando en la App móvil.
+
+	* Creada la Activity “RegisterActivity” desde la que se puede crear un nuevo usuario en la red social.
+
+	* Trabajando en la Activity “PrincipalActivity” para que en ella se muestre la información de nuestro usuario y nuestros posts.

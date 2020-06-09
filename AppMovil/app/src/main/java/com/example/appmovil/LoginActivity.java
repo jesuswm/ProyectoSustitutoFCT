@@ -21,7 +21,6 @@ import com.android.volley.toolbox.Volley;
 
 public class LoginActivity extends AppCompatActivity {
 
-    public  String prueba;
     Button button;
     TextView textView;
     TextView textNoRegistrado;
@@ -35,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         requestQueue= Volley.newRequestQueue(this);
-        button = (Button) findViewById(R.id.butEntar);
+        button = (Button) findViewById(R.id.butEntrar);
         textView = findViewById(R.id.textIniciar);
         imEmail=findViewById(R.id.imEmail);
         imContraseña=findViewById(R.id.imPass);
@@ -43,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         textNoRegistrado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent=new Intent(LoginActivity.this, PrincipalActivity.class);
+                intent=new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
             }
         });
@@ -58,8 +57,6 @@ public class LoginActivity extends AppCompatActivity {
                             @Override
                             public void onResponse(String response) {
                                 Log.e("Response",response);
-                                prueba=response;
-                                textView.setText(response);
                                 intent=new Intent(LoginActivity.this, PrincipalActivity.class);
                                 intent.putExtra("token",response);
                                 startActivity(intent);
@@ -82,9 +79,7 @@ public class LoginActivity extends AppCompatActivity {
                         }
                 );
                 requestQueue.add(stringRequest);
-
             }
         });
-
     }
 }

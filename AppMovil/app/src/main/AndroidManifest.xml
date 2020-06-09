@@ -11,10 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PrincipalActivity"></activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/register">
+        </activity>
+        <activity android:name=".PrincipalActivity" android:screenOrientation="portrait"/>
         <activity
             android:name=".LoginActivity"
-            android:theme="@style/register">
+            android:theme="@style/register"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
