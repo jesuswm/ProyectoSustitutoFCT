@@ -15,4 +15,9 @@
     <string name="btnCerrarSesion">Cerrar sesión</string>
     <string name="btnEditarUsuario">Editar usuario</string>
     <string name="btnCrearPost">Crear nuevo post</string>
+    <string name="btnComentar">Comentar post</string>
+    <string name="Comentarios">Comentarios:</string>
+    <string name="Amigos">Amigos</string>
+    <string name="Usuario">Usuario</string>
+    <string name="Busacar">Buscar</string>
 </resources>

@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
     android:orientation="vertical">
 
     <TextView
@@ -17,12 +18,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView"
+        android:layout_marginBottom="10dp"
         android:textSize="18sp" />
 
     <TextView
         android:id="@+id/postContenido"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:text="TextView"
         android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/postTComentarios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Comentarios:"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/comentarios_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.4">
+
+    </androidx.recyclerview.widget.RecyclerView>
 </LinearLayout>

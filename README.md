@@ -180,3 +180,21 @@ ProyectoSustitutoFCT
 	* Creada la Activity “RegisterActivity” desde la que se puede crear un nuevo usuario en la red social.
 
 	* Trabajando en la Activity “PrincipalActivity” para que en ella se muestre la información de nuestro usuario y nuestros posts.
+
+# 11/06/2020
+
+1. Trabajando en la App móvil.
+
+	* Trabajando en la Activity “PrincipalActivity”.
+
+		* Ahora se muestran también los comentarios que tienen nuestros posts.
+
+		* Se añadió una barra de navegación inferior desde la que se nos dará acceso a otras Activitys de la aplicación.
+
+		* El botón de cerrar sesión ahora es funcional
+	
+	* Creación de la Activity “BusquedaActivity”.
+	
+		* Ya se pueden buscar usuarios
+
+		* También cuenta con la barra de navegación inferior

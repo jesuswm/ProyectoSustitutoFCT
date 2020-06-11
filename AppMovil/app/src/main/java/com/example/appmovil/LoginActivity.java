@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -58,6 +59,7 @@ public class LoginActivity extends AppCompatActivity {
                             public void onResponse(String response) {
                                 Log.e("Response",response);
                                 intent=new Intent(LoginActivity.this, PrincipalActivity.class);
+                                MyApplication.setTokens(response);
                                 intent.putExtra("token",response);
                                 startActivity(intent);
                             }
@@ -81,5 +83,9 @@ public class LoginActivity extends AppCompatActivity {
                 requestQueue.add(stringRequest);
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "Desabilitado", Toast.LENGTH_SHORT).show();
     }
 }

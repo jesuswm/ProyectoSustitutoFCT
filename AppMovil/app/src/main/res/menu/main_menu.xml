@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/mamigos"
+        android:icon="@drawable/ic_favorite_24dp"
+        android:title="@string/Amigos"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/musuario"
+        android:icon="@drawable/ic_user_24dp"
+        android:title="@string/Usuario"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/mbuscar"
+        android:icon="@drawable/ic_search_24dp"
+        android:title="@string/Busacar"
+        app:showAsAction="always" />
+</menu>

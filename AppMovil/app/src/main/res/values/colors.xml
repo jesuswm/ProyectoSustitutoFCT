@@ -5,4 +5,7 @@
     <color name="colorAccent">#D81B60</color>
     <color name="elemento">#CFADEEF9</color>
     <color name="infoColor">#FAEBD7</color>
+    <color name="black">#000000</color>
+    <color name="link">#05c5cf</color>
+    <color name="white">#ffffff</color>
 </resources>
