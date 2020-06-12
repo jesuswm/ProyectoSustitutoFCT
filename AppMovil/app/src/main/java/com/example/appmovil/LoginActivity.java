@@ -27,7 +27,8 @@ public class LoginActivity extends AppCompatActivity {
     TextView textNoRegistrado;
     EditText imEmail;
     EditText imContraseña;
-    String url="http://192.168.1.126:8080/RestProyect/rest/Usuarios/Autentificar";
+    //String url="http://192.168.1.126:8080/RestProyect/rest/Usuarios/Autentificar";
+    String url=MyApplication.getUrlAutentificar();
     Intent intent;
     RequestQueue requestQueue;
     @Override

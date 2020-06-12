@@ -137,7 +137,8 @@ public class PrincipalActivity extends AppCompatActivity {
 
                     break;
                 case R.id.mamigos:
-                    Log.i("pruebaBott","amigo");
+                    intent=new Intent(PrincipalActivity.this, AmigosActivity.class);
+                    startActivity(intent);
                     break;
                 case R.id.mbuscar:
                     intent=new Intent(PrincipalActivity.this, BusquedaActivity.class);

@@ -10,6 +10,16 @@ public class MyApplication {
     private static String urlPostsPropios="http://192.168.1.126:8080/RestProyect/rest/Posts/Propios?token=";
     private static String urlComentarios="http://192.168.1.126:8080/RestProyect/rest/Comentarios?token=";
     private static String urlBuscar="http://192.168.1.126:8080/RestProyect/rest/Usuarios/Buscar?token=";
+    private static String urlAmigos="http://192.168.1.126:8080/RestProyect/rest/Amigos?token=";
+    private static String urlPeticiones="http://192.168.1.126:8080/RestProyect/rest/Peticiones?token=";
+
+    public static String getUrlAmigos() {
+        return urlAmigos;
+    }
+
+    public static String getUrlPeticiones() {
+        return urlPeticiones;
+    }
 
     public static String getUrlBuscar() {
         return urlBuscar;

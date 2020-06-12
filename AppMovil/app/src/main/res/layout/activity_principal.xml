@@ -16,7 +16,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.7"
+            android:layout_weight="0.55"
             android:background="@color/infoColor"
             android:orientation="vertical">
 
@@ -61,6 +61,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
+                    android:backgroundTint="@color/rojo"
                     android:text="@string/btnCerrarSesion" />
 
                 <Button
@@ -68,9 +69,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
+                    android:backgroundTint="@color/link"
                     android:text="@string/btnEditarUsuario" />
 
             </LinearLayout>
+
+            <Button
+                android:id="@+id/buttonCrearPot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/verde"
+                android:text="@string/btnCrearPost" />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -78,7 +87,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.4">
-
         </androidx.recyclerview.widget.RecyclerView>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView

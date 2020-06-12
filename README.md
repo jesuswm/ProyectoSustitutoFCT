@@ -198,3 +198,21 @@ ProyectoSustitutoFCT
 		* Ya se pueden buscar usuarios
 
 		* También cuenta con la barra de navegación inferior
+
+# 12/06/2020
+
+1. Trabajando en la App móvil.
+
+	* Trabajando en la Activity “PrincipalActivity”.
+
+		* Agregado boton de "Crear nuevo post".
+
+		* Cambios de formato.
+	
+	* Creación de la Activity “AmigosActivity”.
+	
+		* Ya se muestran nuestros amigos.
+
+		* Trabajando para que se muestren peticiones de amistad, aún en proceso.
+	
+2. Haciendo vídeo explicativo de avance semanal.

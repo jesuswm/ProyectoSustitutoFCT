@@ -11,17 +11,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BusquedaActivity"
-            android:windowSoftInputMode="adjustPan"
+        <activity android:name=".AmigosActivity"
+            android:theme="@style/register"
             android:screenOrientation="portrait"
             ></activity>
         <activity
+            android:name=".BusquedaActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/register"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
             android:name=".RegisterActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/register"></activity>
+            android:theme="@style/register" />
         <activity
             android:name=".PrincipalActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/register" />
         <activity
             android:name=".LoginActivity"
             android:screenOrientation="portrait"

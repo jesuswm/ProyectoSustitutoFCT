@@ -48,6 +48,7 @@ public class BusquedaActivity extends AppCompatActivity {
     RecyclerView rvResultado;
     AdaptadorBusqueda adaptadorBusqueda;
     BottomNavigationView bottomNav;
+    Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -121,11 +122,12 @@ public class BusquedaActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()){
                 case R.id.musuario:
-                    Intent intent = new Intent(BusquedaActivity.this, PrincipalActivity.class);
+                    intent = new Intent(BusquedaActivity.this, PrincipalActivity.class);
                     startActivity(intent);
                     break;
                 case R.id.mamigos:
-                    Toast.makeText(BusquedaActivity.this, "Amigos", Toast.LENGTH_SHORT).show();
+                    intent = new Intent(BusquedaActivity.this, AmigosActivity.class);
+                    startActivity(intent);
                     break;
                 case R.id.mbuscar:
 

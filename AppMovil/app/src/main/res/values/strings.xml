@@ -20,4 +20,11 @@
     <string name="Amigos">Amigos</string>
     <string name="Usuario">Usuario</string>
     <string name="Busacar">Buscar</string>
+    <string name="TusAmigos">Tus amigos</string>
+    <string name="peticiones">Peticiones pendientes</string>
+    <string name="textPeticion1">El usuario</string>
+    <string name="textPeticion2">quiere ser tu amigo</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="rechaczar">Rechazar</string>
+    <string name="noAmigos">Aun no tienes amigos</string>
 </resources>
