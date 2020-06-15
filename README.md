@@ -205,7 +205,7 @@ ProyectoSustitutoFCT
 
 	* Trabajando en la Activity “PrincipalActivity”.
 
-		* Agregado boton de "Crear nuevo post".
+		* Agregado botón de "Crear nuevo post".
 
 		* Cambios de formato.
 	
@@ -216,3 +216,18 @@ ProyectoSustitutoFCT
 		* Trabajando para que se muestren peticiones de amistad, aún en proceso.
 	
 2. Haciendo vídeo explicativo de avance semanal.
+
+# 15/06/2020
+
+1. Trabajando en la App móvil.
+
+	
+	* Trabajando en la Activity “AmigosActivity”.
+	
+		* Ya se muestran las peticiones de amistad.
+
+		* Ya se pueden aceptar o rechazar las peticiones.
+		
+		* Cambios en el formato de la activity.
+
+	

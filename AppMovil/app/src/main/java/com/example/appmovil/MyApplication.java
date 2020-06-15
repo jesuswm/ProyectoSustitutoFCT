@@ -12,6 +12,11 @@ public class MyApplication {
     private static String urlBuscar="http://192.168.1.126:8080/RestProyect/rest/Usuarios/Buscar?token=";
     private static String urlAmigos="http://192.168.1.126:8080/RestProyect/rest/Amigos?token=";
     private static String urlPeticiones="http://192.168.1.126:8080/RestProyect/rest/Peticiones?token=";
+    private static String urlContestarPeticiones="http://192.168.1.126:8080/RestProyect/rest/Peticiones/Responder?token=";
+
+    public static String getUrlContestarPeticiones() {
+        return urlContestarPeticiones;
+    }
 
     public static String getUrlAmigos() {
         return urlAmigos;

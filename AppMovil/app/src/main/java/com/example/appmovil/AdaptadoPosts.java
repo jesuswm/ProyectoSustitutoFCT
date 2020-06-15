@@ -7,7 +7,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -34,9 +36,11 @@ import java.util.Date;
 public class AdaptadoPosts extends RecyclerView.Adapter<AdaptadoPosts.MyViewHolder> {
     ArrayList<Posts> posts;
     String autor;
-    public AdaptadoPosts(ArrayList<Posts> posts, String autor) {
+    boolean propio;
+    public AdaptadoPosts(ArrayList<Posts> posts, String autor,boolean proppio) {
        this.posts=posts;
        this.autor=autor;
+       this.propio=proppio;
     }
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView fecha;
@@ -45,6 +49,7 @@ public class AdaptadoPosts extends RecyclerView.Adapter<AdaptadoPosts.MyViewHold
         private TextView texComent;
         private RecyclerView rvComentarios;
         private ArrayList<Comentarios> comentarios;
+        private Button btComentar;
         private int id;
         private int idCreador;
         RequestQueue requestQueue;
@@ -55,6 +60,7 @@ public class AdaptadoPosts extends RecyclerView.Adapter<AdaptadoPosts.MyViewHold
             this.creadortext=viewElemento.findViewById(R.id.postCreador);
             this.rvComentarios=viewElemento.findViewById(R.id.comentarios_recycler_view);
             this.texComent=viewElemento.findViewById(R.id.postTComentarios);
+            this.btComentar=viewElemento.findViewById(R.id.postButComentar);
             this.comentarios=new ArrayList<Comentarios>();
         }
     }
@@ -70,6 +76,16 @@ public class AdaptadoPosts extends RecyclerView.Adapter<AdaptadoPosts.MyViewHold
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, int position) {
         Posts post=this.posts.get(position);
+        if(propio){
+            holder.btComentar.setVisibility(View.GONE);
+        }else{
+            holder.btComentar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(holder.contenido.getContext(), "Comentar", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
         holder.requestQueue= Volley.newRequestQueue(holder.itemView.getContext());
         DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         String fechapost = formatter.format(post.getFecha());

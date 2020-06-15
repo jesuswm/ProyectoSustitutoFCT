@@ -17,6 +17,7 @@
             android:id="@+id/TextDecAmigos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/infoColor"
             android:gravity="center"
             android:text="@string/TusAmigos" />
 
@@ -25,11 +26,13 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@android:color/darker_gray" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/amigos_recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.4">
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            android:background="#C5BDB9">
 
         </androidx.recyclerview.widget.RecyclerView>
 
@@ -37,6 +40,7 @@
             android:id="@+id/TextDecPeticiones"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/infoColor"
             android:gravity="center"
             android:text="@string/peticiones" />
 
@@ -49,8 +53,9 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/peticiones_recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.4"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7"
+            android:background="#C5BDB9"
             android:visibility="visible">
 
         </androidx.recyclerview.widget.RecyclerView>

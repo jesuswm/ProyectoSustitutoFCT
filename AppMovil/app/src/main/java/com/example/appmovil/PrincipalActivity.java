@@ -84,7 +84,7 @@ public class PrincipalActivity extends AppCompatActivity {
                                 Gson gson = new Gson();
                                 Posts post = gson.fromJson(row.toString(), Posts.class);
                                 posts.add(post);
-                                AdaptadoPosts adaptadoPosts=new AdaptadoPosts(posts,nombre);
+                                AdaptadoPosts adaptadoPosts=new AdaptadoPosts(posts,nombre,false);
                                 RecyclerView.LayoutManager miLayoutManager = new LinearLayoutManager(PrincipalActivity.this, LinearLayoutManager.VERTICAL, false);
 
                                 rvpost.setLayoutManager(miLayoutManager);

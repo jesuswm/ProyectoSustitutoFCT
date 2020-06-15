@@ -41,6 +41,14 @@
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:background="@android:color/darker_gray" />
+
+    <Button
+        android:id="@+id/postButComentar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/verde"
+        android:text="@string/btnComentar" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/comentarios_recycler_view"
         android:layout_width="match_parent"

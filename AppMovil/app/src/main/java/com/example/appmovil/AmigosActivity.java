@@ -44,11 +44,13 @@ public class AmigosActivity extends AppCompatActivity {
     String urlAmigos;
     String urlPeticiones;
     private ArrayList<Usuarios> amigos;
+    private ArrayList<Peticiones> peticiones;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_amigos);
         amigos=new ArrayList<>();
+        peticiones=new ArrayList<>();
         requestQueue= Volley.newRequestQueue(this);
         urlAmigos=MyApplication.getUrlAmigos();
         urlPeticiones=MyApplication.getUrlPeticiones();
@@ -63,8 +65,12 @@ public class AmigosActivity extends AppCompatActivity {
         bottomNav.setOnNavigationItemSelectedListener(navListener);
         rvPeticiones.setVisibility(View.GONE);
         txtPeticiones.setVisibility(View.GONE);
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(rvPeticiones.getContext(), 1);
+        rvPeticiones.addItemDecoration(dividerItemDecoration);
+        DividerItemDecoration dividerItemDecorationA = new DividerItemDecoration(rvAmigos.getContext(), 1);
+        rvAmigos.addItemDecoration(dividerItemDecorationA);
         cargarAmigos();
-        //cargarPeticiones();
+        cargarPeticiones();
     }
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
@@ -85,7 +91,7 @@ public class AmigosActivity extends AppCompatActivity {
             return true;
         }
     };
-    private void cargarAmigos(){
+    public void cargarAmigos(){
         amigos=new ArrayList<>();
         JsonArrayRequest jsonArrayRequest=new JsonArrayRequest(
                 Request.Method.GET,
@@ -97,8 +103,12 @@ public class AmigosActivity extends AppCompatActivity {
                         if(response.length()==0){
                             txtAmigos.setText(R.string.noAmigos);
                             rvAmigos.setVisibility(View.GONE);
-                            rvPeticiones.setVisibility(View.VISIBLE);
+
                             //viewDecAmigos.setVisibility(View.GONE);
+                        }else{
+                            txtAmigos.setText(R.string.Amigos);
+                            rvAmigos.setVisibility(View.VISIBLE);
+
                         }
                         for (int i = 0; i < response.length(); i++) {
                             try {
@@ -106,17 +116,17 @@ public class AmigosActivity extends AppCompatActivity {
                                 Gson gson = new Gson();
                                 Usuarios amigo = gson.fromJson(row.toString(), Usuarios.class);
                                 amigos.add(amigo);
-                                AdaptadorBusqueda adaptadoAmigos=new AdaptadorBusqueda(amigos);
-                                RecyclerView.LayoutManager miLayoutManager = new LinearLayoutManager(AmigosActivity.this, LinearLayoutManager.VERTICAL, false);
 
-                                rvAmigos.setLayoutManager(miLayoutManager);
-                                rvAmigos.setAdapter(adaptadoAmigos);
-                                DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(rvAmigos.getContext(), 1);
-                                rvAmigos.addItemDecoration(dividerItemDecoration);
                             } catch (JSONException e) {
 
                             }
                         }
+                        AdaptadorBusqueda adaptadoAmigos=new AdaptadorBusqueda(amigos);
+                        RecyclerView.LayoutManager miLayoutManager = new LinearLayoutManager(AmigosActivity.this, LinearLayoutManager.VERTICAL, false);
+
+                        rvAmigos.setLayoutManager(miLayoutManager);
+                        rvAmigos.setAdapter(adaptadoAmigos);
+
                     }
                 },
                 new Response.ErrorListener() {
@@ -131,8 +141,8 @@ public class AmigosActivity extends AppCompatActivity {
         );
         requestQueue.add(jsonArrayRequest);
     }
-    private void cargarPeticiones(){
-        amigos=new ArrayList<>();
+    public void cargarPeticiones(){
+        peticiones=new ArrayList<>();
         JsonArrayRequest jsonArrayRequest=new JsonArrayRequest(
                 Request.Method.GET,
                 urlPeticiones + MyApplication.getTokens(),
@@ -141,27 +151,34 @@ public class AmigosActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONArray response) {
                         if(response.length()==0){
-                            txtPeticiones.setVisibility(View.GONE);;
+                            txtPeticiones.setVisibility(View.GONE);
                             rvPeticiones.setVisibility(View.GONE);
+                            AdaptadorPeticiones adaptadorPeticiones=new AdaptadorPeticiones(peticiones);
+                            RecyclerView.LayoutManager miLayoutManager = new LinearLayoutManager(AmigosActivity.this, LinearLayoutManager.VERTICAL, false);
+                            rvPeticiones.setLayoutManager(miLayoutManager);
+                            rvPeticiones.setAdapter(adaptadorPeticiones);
+
                             //viewDecAmigos.setVisibility(View.GONE);
+                        }else{
+                            txtPeticiones.setVisibility(View.VISIBLE);
+                            rvPeticiones.setVisibility(View.VISIBLE);
                         }
                         for (int i = 0; i < response.length(); i++) {
                             try {
                                 JSONObject row = response.getJSONObject(i);
                                 Gson gson = new Gson();
-                                Usuarios amigo = gson.fromJson(row.toString(), Usuarios.class);
-                                amigos.add(amigo);
-                                AdaptadorBusqueda adaptadoAmigos=new AdaptadorBusqueda(amigos);
-                                RecyclerView.LayoutManager miLayoutManager = new LinearLayoutManager(AmigosActivity.this, LinearLayoutManager.VERTICAL, false);
+                                Peticiones peticion = gson.fromJson(row.toString(), Peticiones.class);
+                                peticiones.add(peticion);
 
-                                rvPeticiones.setLayoutManager(miLayoutManager);
-                                rvPeticiones.setAdapter(adaptadoAmigos);
-                                DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(rvPeticiones.getContext(), 1);
-                                rvPeticiones.addItemDecoration(dividerItemDecoration);
                             } catch (JSONException e) {
 
                             }
                         }
+                        AdaptadorPeticiones adaptadorPeticiones=new AdaptadorPeticiones(peticiones);
+                        RecyclerView.LayoutManager miLayoutManager = new LinearLayoutManager(AmigosActivity.this, LinearLayoutManager.VERTICAL, false);
+                        rvPeticiones.setLayoutManager(miLayoutManager);
+                        rvPeticiones.setAdapter(adaptadorPeticiones);
+
                     }
                 },
                 new Response.ErrorListener() {
@@ -169,6 +186,10 @@ public class AmigosActivity extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
                         txtPeticiones.setVisibility(View.GONE);
                         rvPeticiones.setVisibility(View.GONE);
+                        AdaptadorPeticiones adaptadorPeticiones=new AdaptadorPeticiones(peticiones);
+                        RecyclerView.LayoutManager miLayoutManager = new LinearLayoutManager(AmigosActivity.this, LinearLayoutManager.VERTICAL, false);
+                        rvPeticiones.setLayoutManager(miLayoutManager);
+                        rvPeticiones.setAdapter(adaptadorPeticiones);
                         //viewDecAmigos.setVisibility(View.GONE);
                     }
                 }
