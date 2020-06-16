@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    tools:context=".PrincipalActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.7"
+            android:background="@color/infoColor"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textAUsuario"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.13"
+                android:background="#8D1170D6"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:text="@string/btnEditarUsuario"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewEnunciado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.04"
+                android:background="@color/azulOscuro"
+                android:gravity="center"
+                android:text="@string/CambiarDatostxt"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/AUimNombre"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.1"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/nuevoNombre"
+                android:inputType="text"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/AUimEmail"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.1"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/nuevoEmail"
+                android:inputType="textEmailAddress"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/AUimContraseña"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.1"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/nuevoPass"
+                android:inputType="textPassword"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/AUimConfContraseña"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.1"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/nuevoConfirma"
+                android:inputType="textPassword"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/AUimOldContraseña"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.1"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/ContraseñaActual"
+                android:inputType="textPassword"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/AbtnCancelar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:backgroundTint="@color/rojo"
+                    android:text="@string/cancelar" />
+
+                <Button
+                    android:id="@+id/AbtnActualizarUsuario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:backgroundTint="@color/verde"
+                    android:text="@string/actualizar" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/AUbottonNav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:itemBackground="@color/elemento"
+            app:itemIconTint="@color/bottom_nav_no_color"
+            app:itemTextColor="@color/bottom_nav_no_color"
+            app:menu="@menu/main_menu"></com.google.android.material.bottomnavigation.BottomNavigationView>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

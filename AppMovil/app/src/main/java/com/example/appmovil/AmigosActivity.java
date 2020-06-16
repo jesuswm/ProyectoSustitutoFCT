@@ -158,6 +158,8 @@ public class AmigosActivity extends AppCompatActivity {
                             rvPeticiones.setLayoutManager(miLayoutManager);
                             rvPeticiones.setAdapter(adaptadorPeticiones);
 
+                            rvAmigos.setVisibility(View.VISIBLE);
+
                             //viewDecAmigos.setVisibility(View.GONE);
                         }else{
                             txtPeticiones.setVisibility(View.VISIBLE);

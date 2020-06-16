@@ -8,6 +8,7 @@ public class Posts {
     private String contenido;
     private boolean privado;
     private Date fecha;
+
     public int getId() {
         return id;
     }

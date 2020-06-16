@@ -1,5 +1,6 @@
 package com.example.appmovil;
 
+import android.content.Intent;
 import android.os.Build;
 import android.text.Html;
 import android.view.LayoutInflater;
@@ -51,7 +52,10 @@ public class AdaptadorComentarios extends RecyclerView.Adapter<AdaptadorComentar
         holder.creadortext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(holder.contenido.getContext(), ""+coment.getIdCreador(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(holder.contenido.getContext(), ""+coment.getIdCreador(), Toast.LENGTH_SHORT).show();
+                Intent intent= new Intent(holder.contenido.getContext(),OtroUsuarioActivity.class);
+                intent.putExtra("id",coment.getIdCreador());
+                holder.contenido.getContext().startActivity(intent);
             }
         });
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {

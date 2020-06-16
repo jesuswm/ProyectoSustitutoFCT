@@ -36,6 +36,8 @@ public class PrincipalActivity extends AppCompatActivity {
     TextView textNombre;
     TextView textEmail;
     Button btnCerrarSesion;
+    Button btnRditarUsuario;
+    Button btnPublicarPost;
     //String url="http://192.168.1.126:8080/RestProyect/rest/Usuarios/MiUsuario?token=";
     //String urlPost="http://192.168.1.126:8080/RestProyect/rest/Posts/Propios?token=";
     String url=MyApplication.getUrlInfoUsuario();
@@ -57,6 +59,23 @@ public class PrincipalActivity extends AppCompatActivity {
             public void onClick(View v) {
                 MyApplication.setTokens(null);
                 intent=new Intent(PrincipalActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnRditarUsuario=findViewById(R.id.buttonEditarUsuario);
+        btnRditarUsuario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent=new Intent(PrincipalActivity.this,ActualizarUsuarioActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnPublicarPost=findViewById(R.id.buttonCrearPot);
+        btnPublicarPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent=new Intent(PrincipalActivity.this,PublicarActivity.class);
+                intent.putExtra("post",true);
                 startActivity(intent);
             }
         });
@@ -84,7 +103,7 @@ public class PrincipalActivity extends AppCompatActivity {
                                 Gson gson = new Gson();
                                 Posts post = gson.fromJson(row.toString(), Posts.class);
                                 posts.add(post);
-                                AdaptadoPosts adaptadoPosts=new AdaptadoPosts(posts,nombre,false);
+                                AdaptadoPosts adaptadoPosts=new AdaptadoPosts(posts,nombre,true);
                                 RecyclerView.LayoutManager miLayoutManager = new LinearLayoutManager(PrincipalActivity.this, LinearLayoutManager.VERTICAL, false);
 
                                 rvpost.setLayoutManager(miLayoutManager);

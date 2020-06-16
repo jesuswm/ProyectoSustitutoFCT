@@ -1,5 +1,6 @@
 package com.example.appmovil;
 
+import android.content.Intent;
 import android.os.Build;
 import android.text.Html;
 import android.view.LayoutInflater;
@@ -47,7 +48,10 @@ public class AdaptadorBusqueda extends RecyclerView.Adapter<AdaptadorBusqueda.Bu
         holder.nombre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(holder.nombre.getContext(), ""+usuario.getId(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(holder.nombre.getContext(), ""+usuario.getId(), Toast.LENGTH_SHORT).show();
+                Intent intent= new Intent(holder.nombre.getContext(),OtroUsuarioActivity.class);
+                intent.putExtra("id",usuario.getId());
+                holder.nombre.getContext().startActivity(intent);
             }
         });
     }

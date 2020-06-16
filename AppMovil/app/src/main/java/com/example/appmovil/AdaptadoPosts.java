@@ -1,6 +1,7 @@
 package com.example.appmovil;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.text.Html;
 import android.util.Log;
@@ -75,14 +76,18 @@ public class AdaptadoPosts extends RecyclerView.Adapter<AdaptadoPosts.MyViewHold
 
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, int position) {
-        Posts post=this.posts.get(position);
+        final Posts post=this.posts.get(position);
         if(propio){
             holder.btComentar.setVisibility(View.GONE);
         }else{
             holder.btComentar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(holder.contenido.getContext(), "Comentar", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(holder.contenido.getContext(), "Comentar", Toast.LENGTH_SHORT).show();
+                    Intent intent=new Intent(holder.contenido.getContext(),PublicarActivity.class);
+                    intent.putExtra("idpost",post.getId());
+                    intent.putExtra("idpropietario",post.getIdCreador());
+                    holder.contenido.getContext().startActivity(intent);
                 }
             });
         }

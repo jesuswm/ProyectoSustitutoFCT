@@ -26,5 +26,23 @@
     <string name="textPeticion2"> quiere ser tu amigo</string>
     <string name="aceptar">Aceptar</string>
     <string name="rechaczar">Rechazar</string>
-    <string name="noAmigos">Aun no tienes amigos</string>
+    <string name="noAmigos">Aún no tienes amigos</string>
+    <string name="solicitarAmistad">Enviar solicitud de amistas</string>
+    <string name="esperandoAmistad">Esperando respuestas a la solicitud</string>
+    <string name="usuarioPropietario">Información propietario</string>
+    <string name="yaAmigos">Ya eres amigo del usuario</string>
+    <string name="CambiarDatostxt">Solo rellene los campos que quiere modificar y la contraseña actual para modificar su perfil</string>
+    <string name="nuevoNombre">Nuevo nombre</string>
+    <string name="nuevoEmail">Nuevo email</string>
+    <string name="nuevoPass">Nueva contraseña</string>
+    <string name="nuevoConfirma">Confirmar nueva contraseña</string>
+    <string name="ContraseñaActual">Contraseña actual</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="actualizar">Confirmar</string>
+    <string name="publicar">Publicar</string>
+    <string name="publicarPost">Publicar post</string>
+    <string name="publicarComentario">Publicar comentario</string>
+    <string name="publico">Público</string>
+    <string name="privado">Privado</string>
+    <string name="tipo">Que tipo de post quieres crear</string>
 </resources>

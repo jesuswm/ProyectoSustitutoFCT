@@ -229,5 +229,24 @@ ProyectoSustitutoFCT
 		* Ya se pueden aceptar o rechazar las peticiones.
 		
 		* Cambios en el formato de la activity.
+		
+# 16/06/2020
+
+1. Trabajando en la App móvil.
+
+	
+	* Creación de la Activity “OtroUsuarioActivity”.
+	
+		* Se pueden consultar los post de otros usuarios.
+
+		* Se pueden mandar solicitudes de amistad al propietario.
+		
+	* Actualizados los nombres de los usuarios en los resultados de buscar un usuario y los comentarios de los posts de forma que al pulsarlos nos lleven a la "OtroUsuarioActivity" correspondiente a ese usuario.
+	
+	* Creación de la Activity “ActualizarUsuarioActivity”.
+	
+	* Creación de la Activity “PublicarActivity”.
+		
+	
 
 	
